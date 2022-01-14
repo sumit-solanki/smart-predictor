@@ -1,11 +1,9 @@
 import './App.css';
-
+import DashBoard from './DashBoard'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        MB Hackathon 2022
-      </header>
+        <DashBoard />
     </div>
   );
 }
