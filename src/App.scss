@@ -1,0 +1,40 @@
+/* App.js & common */
+.App{
+    height: 100vh;
+    width: 100%;
+}
+.grid-layout{
+    display: grid;
+    grid-template-rows: 50px 1fr;
+
+}
+.common-wrapper{
+    height: 80vh;
+}
+
+
+/* Summary  */
+.summary-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+
+    .left{
+        
+    }
+    .right{
+        background-color: aqua;
+    }
+}
+
+/* Detail */
+.details-main{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    .left{
+        
+    }
+    .right{
+        background-color: aqua;
+    }
+}
