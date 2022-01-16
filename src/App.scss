@@ -11,6 +11,10 @@
 .common-wrapper {
   height: 80vh;
 }
+.commonContentWrapper {
+    padding: 4%;
+    background: #E2E8F0;
+}
 
 /* Summary  */
 .summary-main {
@@ -79,12 +83,67 @@
 }
 
 /* Detail */
-.details-main {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  .left {
-  }
-  .right {
-    background-color: aqua;
-  }
+.details-main{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    .left{
+        .existingUserHeadSection {
+
+        }
+        .leadsList {
+            .leadDataBox {
+                margin-bottom: 2%;
+                width: 95%;
+                padding: 15px 10px;
+                display: grid;
+                grid-template-columns: 33% 13% 13% 13% 13% 15%;
+
+                .leadAvatar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #E2E8F0;
+                    width: 37%;
+                    height: 100%;
+                    margin: auto;
+                    border-radius: 28px;
+                }
+                .label {
+                    color: #475569;
+                    font-size: 14px;
+                }
+                .leadValue {
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+            .commonLeadInfoRowGrid {
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+            }
+            .commonLeadInfoColumnGrid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+    .right{
+        .biCardsWrapper {
+            .biMainCardsCommon {
+                padding: 15px 10px;
+                margin-bottom: 3%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .newLeadsCard, .buyingScoreCard {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .newLeadsInfo {
+                display: flex;
+                flex-flow: column;
+                width: 100%;
+            }
+        }
+    }
 }
