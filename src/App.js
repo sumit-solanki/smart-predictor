@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, Link, Routes } from "react-router-dom";
 import Header from "./Header";
 import Summary from "./Home/Summary";
 import Details from "./Home/Details";
-import Grid from "@mui/material/Grid";
+
 function App() {
   return (
     <div className="App">
