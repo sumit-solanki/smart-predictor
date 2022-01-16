@@ -1,6 +1,6 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
-
+import RevenueLineChart from './RevenueLineChart'
 const BusinessImpactCards = () => {
     return (
         <div className='biCardsWrapper'>
@@ -10,7 +10,7 @@ const BusinessImpactCards = () => {
                     <span className='biLabel'>Potential Revenue</span>
                 </div>
                 <div className='potentialRevenueGraph'>
-                    X
+                   <RevenueLineChart />
                 </div>
             </Paper>
             <Paper elevation={3} className='leadsPlusScoreCards biMainCardsCommon'>

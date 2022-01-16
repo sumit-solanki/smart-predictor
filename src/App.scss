@@ -12,8 +12,8 @@
   height: 80vh;
 }
 .commonContentWrapper {
-    padding: 4%;
-    background: #E2E8F0;
+  padding: 4%;
+  background: #e2e8f0;
 }
 
 /* Summary  */
@@ -37,17 +37,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .data-title{
+    .data-title {
       font-size: 36px;
-
     }
-    .data-detail{
-        font-size: 14px;
+    .data-detail {
+      font-size: 14px;
     }
   }
   .left {
     .engagement-wrapper {
-
       .main-detail {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -56,94 +54,213 @@
         .large {
           grid-column: span 2;
         }
-
       }
     }
   }
   .right {
-      .widget-wrapper{
-        background: #FFFFFF;
-        // box-shadow: 0px 0px 1px rgb(15 23 42 / 6%), 0px 4px 6px -1px rgb(15 23 42 / 10%), 0px 2px 4px -1px rgb(15 23 42 / 6%);
-        margin-bottom: 20px;
-        .widget-head{
-            
-    background: linear-gradient(
-        90deg
-        , #00B0FF 8.04%, #2962FF 100%);
-            padding: 20px;
+    .widget-wrapper {
+      background: #ffffff;
+      margin-bottom: 20px;
+      box-shadow: 0px 0px 1px rgba(15, 23, 42, 0.06),
+        0px 4px 6px -1px rgba(15, 23, 42, 0.1),
+        0px 2px 4px -1px rgba(15, 23, 42, 0.06);
+      .widget-head {
+        background: linear-gradient(90deg, #00b0ff 8.04%, #2962ff 100%);
+        padding: 20px;
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        text-transform: capitalize;
+        border-radius: 5px;
+      }
+      .widget-content {
+        padding: 70px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .card-img {
+          margin-bottom: 25px;
+        }
+        .card-title {
+          font-weight: bold;
+          font-size: 24px;
+          margin-bottom: 10px;
+          text-transform: capitalize;
+        }
+        .card-dsc {
+          font-size: 14px;
+          margin-bottom: 25px;
+        }
+        .button-row {
+          margin-bottom: 25px;
+          .widget-btn {
+            background: #ffffff;
+            border: 1px solid #94a3b8;
+            /* box-sizing: border-box; */
+            border-radius: 100px;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #475569;
+            margin-right: 10px;
+            cursor: pointer;
+          }
+        }
+        .main-btn-row {
+          .predictor-btn {
+            background: #2962ff;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 14px;
             color: white;
-            font-size: 24px;
-            font-weight: 500;
-            text-align: center;
-            text-transform: capitalize;
-        
+            padding: 9px 15px;
+            border: 1px solid;
+            cursor: pointer;
+            display: flex;
+            img {
+              margin-left: 10px;
+            }
+          }
         }
       }
+    }
   }
 }
 
 /* Detail */
-.details-main{
+.details-main {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  .left {
+    .existingUserHeadSection {
+    }
+    .leadsList {
+      .leadDataBox {
+        margin-bottom: 2%;
+        width: 95%;
+        padding: 15px 10px;
+        display: grid;
+        grid-template-columns: 33% 13% 13% 13% 13% 15%;
+
+        .leadAvatar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #e2e8f0;
+          width: 37%;
+          height: 100%;
+          margin: auto;
+          border-radius: 28px;
+        }
+        .label {
+          color: #475569;
+          font-size: 14px;
+        }
+        .leadValue {
+          font-weight: 600;
+          font-size: 14px;
+        }
+      }
+      .commonLeadInfoRowGrid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
+      .commonLeadInfoColumnGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  .right {
+    .biCardsWrapper {
+      .biMainCardsCommon {
+        padding: 15px 10px;
+        margin-bottom: 3%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .newLeadsCard,
+      .buyingScoreCard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .newLeadsInfo {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.MuiModal-root {
+  .MuiPaper-root.MuiPaper-elevation {
+    max-width: unset;
+  }
+}
+.summary-dialog-wrapper {
+  padding: 40px;
+  .dialog-head {
+    margin-bottom: 30px;
+    .head-title {
+      color: #475569;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+    .head-desc {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+  }
+  .dialog-content {
     display: grid;
-    grid-template-columns: 60% 40%;
-    .left{
-        .existingUserHeadSection {
-
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    .single-dialog-card {
+      .MuiPaper-root.MuiPaper-elevation {
+        max-width: unset;
+        padding: 0px;
+      }
+      .card-inner {
+        text-align: center;
+        .card-top {
+          padding: 20px;
+          .card-title {
+            color: #475569;
+            font-weight: 800;
+            font-size: 18px;
+          }
+          .title-desc {
+            color: #94a3b8;
+            font-weight: 500;
+            font-size: 14px;
+          }
         }
-        .leadsList {
-            .leadDataBox {
-                margin-bottom: 2%;
-                width: 95%;
-                padding: 15px 10px;
-                display: grid;
-                grid-template-columns: 33% 13% 13% 13% 13% 15%;
-
-                .leadAvatar {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: #E2E8F0;
-                    width: 37%;
-                    height: 100%;
-                    margin: auto;
-                    border-radius: 28px;
-                }
-                .label {
-                    color: #475569;
-                    font-size: 14px;
-                }
-                .leadValue {
-                    font-weight: 600;
-                    font-size: 14px;
-                }
-            }
-            .commonLeadInfoRowGrid {
-                display: grid;
-                grid-template-rows: 1fr 1fr;
-            }
-            .commonLeadInfoColumnGrid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
+        .card-bottom {
+          font-weight: 800;
+          font-size: 14px;
+          padding: 10px;
+          .highlight-large {
+            font-weight: 800;
+            font-size: 36px;
+          }
         }
+        .card-bottom.green{
+          color: #10b981;
+          background: #ecfdf5;
+        }
+        .card-bottom.yellow{
+          color: #F59E0B;
+          background: #FFFBEB;
+        }
+        .card-bottom.red{
+          color: #F43F5E;
+          background:  #FFF1F2;
+        }
+      }
     }
-    .right{
-        .biCardsWrapper {
-            .biMainCardsCommon {
-                padding: 15px 10px;
-                margin-bottom: 3%;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-            .newLeadsCard, .buyingScoreCard {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-            }
-            .newLeadsInfo {
-                display: flex;
-                flex-flow: column;
-                width: 100%;
-            }
-        }
-    }
+  }
 }
