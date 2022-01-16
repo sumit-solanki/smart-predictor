@@ -1,6 +1,8 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
-import RevenueLineChart from './RevenueLineChart'
+import RevenueLineChart from './RevenueLineChart';
+import newLeadsAvatar from './newLeads.png';
+import buyingScoreAvatar from './buyingScore.png';
 const BusinessImpactCards = () => {
     return (
         <div className='biCardsWrapper'>
@@ -13,23 +15,27 @@ const BusinessImpactCards = () => {
                    <RevenueLineChart />
                 </div>
             </Paper>
-            <Paper elevation={3} className='leadsPlusScoreCards biMainCardsCommon'>
-                <div className='newLeadsCard'>
+            <div className='leadsPlusScoreCards biMainCardsCommon col-gap-20'>
+                <Paper elevation={3} className='newLeadsCard padding-20'>
                     <div className='newLeadsInfo'>
                         <span className='biValue'>$20</span>
                         <span className='biLabel'>New Leads</span>
                     </div>
-                    <div className='newLeadsAvatar'>X</div>
-                </div>
-                <div className='buyingScoreCard'>
+                    <div className='newLeadsAvatar'>
+                        <img src={newLeadsAvatar} />
+                    </div>
+                </Paper>
+                <Paper elevation={3} className='buyingScoreCard padding-20'>
                     <div className='newLeadsInfo'>
                         <span className='biValue'>$20</span>
-                        <span className='biLabel'>New Leads</span>
+                        <span className='biLabel'>Buying score</span>
                     </div>
-                    <div className='newLeadsAvatar'>X</div>
-                </div>
-            </Paper>
-            <Paper elevation={3} className='staffUtilizationCard biMainCardsCommon'>
+                    <div className='newLeadsAvatar'>
+                        <img src={buyingScoreAvatar} />
+                    </div>
+                </Paper>
+            </div>
+            <Paper elevation={3} className='staffUtilizationCard biMainCardsCommon padding-20'>
                 <div className='potentialRevenueInfo'>
                     <span className='biValue'>70%</span>
                     <span className='biLabel'>Staff Utilization</span>

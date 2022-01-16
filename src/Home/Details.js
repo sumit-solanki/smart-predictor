@@ -28,7 +28,7 @@ import BusinessImpactCards from './businessImpactCards';
                     <span className='backArrow'>{`<-`}</span><span>Back</span>
                 </Link>
             </div>
-            <div className='details-main  common-wrapper '>
+            <div className='details-main'>
                 <div className='left'>
                     <div className='existingUserHeadSection'>
                         <h2>50 - Existing User</h2>

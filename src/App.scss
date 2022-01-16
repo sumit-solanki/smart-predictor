@@ -7,6 +7,40 @@
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-gap: 20px;
+
+  /* Header Section */
+    .headerMain {
+        display: flex;
+        padding: 15px 20px;
+        justify-content: space-between;
+
+        .headerInfo {
+            display: flex;
+            justify-content: center;
+
+            .logo {
+                width: 75px;
+            }
+            .headerLabel {
+                position: relative;
+                top: 12px;
+                color: #475569;
+                font-weight: 600;
+                font-size: 20px;
+            }
+        }
+        .studioInfo {
+            .studioName {
+                color: #94A3B8;
+                font-size: 18px;
+            }
+            .studioLocation {
+                color: #475569;
+                font-size: 14px;
+                text-align: right;
+            }
+        }
+    }
 }
 .common-wrapper {
   height: 80vh;
@@ -14,6 +48,33 @@
 .commonContentWrapper {
   padding: 4%;
   background: #e2e8f0;
+
+    .backToHomeLink {
+        background: #FFFFFF;
+        border: 1px solid #E2E8F0;
+        box-sizing: border-box;
+        border-radius: 18px;
+        width: 77px;
+        height: 36px;
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        a {
+            text-decoration: none;
+        }
+        .backArrow {
+            color: #00B0FF;
+            font-weight: 600;
+            padding-right: 5px;
+        }
+        span {
+            color: #94A3B8;
+        }
+    }
 }
 
 /* Summary  */
@@ -132,66 +193,91 @@
 .details-main {
   display: grid;
   grid-template-columns: 60% 40%;
-  .left {
-    .existingUserHeadSection {
-    }
-    .leadsList {
-      .leadDataBox {
-        margin-bottom: 2%;
-        width: 95%;
-        padding: 15px 10px;
-        display: grid;
-        grid-template-columns: 33% 13% 13% 13% 13% 15%;
+    .left {
+        .existingUserHeadSection {
+        
+        }
+        .leadsList {
+        .leadDataBox {
+            margin-bottom: 2%;
+            width: 95%;
+            padding: 20px 10px;
+            display: grid;
+            grid-template-columns: 33% 13% 13% 13% 13% 15%;
+            cursor: pointer;
 
-        .leadAvatar {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: #e2e8f0;
-          width: 37%;
-          height: 100%;
-          margin: auto;
-          border-radius: 28px;
+            .leadAvatar {
+            display: flex;
+            justify-content: center;
+            }
+            .label {
+            color: #475569;
+            font-size: 14px;
+            }
+            .leadValue {
+            font-weight: 600;
+            font-size: 14px;
+            }
         }
-        .label {
-          color: #475569;
-          font-size: 14px;
+        .commonLeadInfoRowGrid {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
         }
-        .leadValue {
-          font-weight: 600;
-          font-size: 14px;
+        .commonLeadInfoColumnGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
-      }
-      .commonLeadInfoRowGrid {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-      }
-      .commonLeadInfoColumnGrid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+        }
     }
-  }
-  .right {
-    .biCardsWrapper {
-      .biMainCardsCommon {
-        padding: 15px 10px;
-        margin-bottom: 3%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .newLeadsCard,
-      .buyingScoreCard {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-      .newLeadsInfo {
-        display: flex;
-        flex-flow: column;
-        width: 100%;
-      }
+    .right {
+        .biCardsWrapper {
+        .biMainCardsCommon {
+            padding: 20px 10px;
+            margin-bottom: 3%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .col-gap-20 {
+            grid-column-gap: 20px;
+        }
+        .padding-20 {
+            padding: 20px 10px;
+        }
+        .newLeadsCard,
+        .buyingScoreCard {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+        .newLeadsInfo {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+        }
+        .potentialRevenueInfo {
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+            }
+            .biValue {
+                font-size: 18px;
+                font-weight: 600;
+                color: blue;
+            }
+        }
     }
-  }
+    .existingUserHeadSection, .biHeadSection {
+        padding: 20px 0;
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #475569;
+        }
+        span {
+            font-size: 14px;
+            color: #475569;
+        }
+    }
 }
 
 .MuiModal-root {
