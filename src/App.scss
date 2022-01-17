@@ -8,39 +8,39 @@
   grid-template-rows: min-content 1fr;
 
   /* Header Section */
-    .headerMain {
-        display: flex;
-        padding: 15px 20px;
-        justify-content: space-between;
-        box-shadow: inset 0px -1px 0px #E2E8F0;
+  .headerMain {
+    display: flex;
+    padding: 15px 20px;
+    justify-content: space-between;
+    box-shadow: inset 0px -1px 0px #e2e8f0;
 
-        .headerInfo {
-            display: flex;
-            justify-content: center;
+    .headerInfo {
+      display: flex;
+      justify-content: center;
 
-            .logo {
-                width: 75px;
-            }
-            .headerLabel {
-                position: relative;
-                top: 12px;
-                color: #475569;
-                font-weight: 600;
-                font-size: 20px;
-            }
-        }
-        .studioInfo {
-            .studioName {
-                color: #94A3B8;
-                font-size: 18px;
-            }
-            .studioLocation {
-                color: #475569;
-                font-size: 14px;
-                text-align: right;
-            }
-        }
+      .logo {
+        width: 75px;
+      }
+      .headerLabel {
+        position: relative;
+        top: 12px;
+        color: #475569;
+        font-weight: 600;
+        font-size: 20px;
+      }
     }
+    .studioInfo {
+      .studioName {
+        color: #94a3b8;
+        font-size: 18px;
+      }
+      .studioLocation {
+        color: #475569;
+        font-size: 14px;
+        text-align: right;
+      }
+    }
+  }
 }
 .common-wrapper {
   height: 80vh;
@@ -49,32 +49,32 @@
   padding: 4%;
   background: #e2e8f0;
 
-    .backToHomeLink {
-        background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        box-sizing: border-box;
-        border-radius: 18px;
-        width: 77px;
-        height: 36px;
-        display: flex;
-        flex-direction: row;
-        font-size: 14px;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
+  .backToHomeLink {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+    border-radius: 18px;
+    width: 77px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 
-        a {
-            text-decoration: none;
-        }
-        .backArrow {
-            color: #00B0FF;
-            font-weight: 600;
-            padding-right: 5px;
-        }
-        span {
-            color: #94A3B8;
-        }
+    a {
+      text-decoration: none;
     }
+    .backArrow {
+      color: #00b0ff;
+      font-weight: 600;
+      padding-right: 5px;
+    }
+    span {
+      color: #94a3b8;
+    }
+  }
 }
 
 /* Summary  */
@@ -104,12 +104,22 @@
     .data-title {
       font-size: 36px;
       font-weight: 400;
-
+      &.total-loss{
+        color: #E53935;
+      }
+      .lead-score-span{
+        // margin-left: -10px;
+      }
     }
     .data-detail {
       font-size: 14px;
       font-weight: 700;
-
+    }
+    .data-detail-desc {
+      margin-top: 10px;
+      color: #94a3b8;
+      font-weight: normal;
+      font-size: 14px;
     }
   }
   .left {
@@ -132,7 +142,7 @@
       box-shadow: 0px 0px 1px rgba(15, 23, 42, 0.06),
         0px 4px 6px -1px rgba(15, 23, 42, 0.1),
         0px 2px 4px -1px rgba(15, 23, 42, 0.06);
-        border-radius: 5px;
+      border-radius: 5px;
       .widget-head {
         background: linear-gradient(90deg, #00b0ff 8.04%, #2962ff 100%);
         padding: 20px;
@@ -157,13 +167,11 @@
           margin-bottom: 10px;
           text-transform: capitalize;
           color: #475569;
-
         }
         .card-dsc {
           font-size: 14px;
           margin-bottom: 25px;
           color: #475569;
-
         }
         .button-row {
           margin-bottom: 25px;
@@ -178,7 +186,7 @@
             color: #475569;
             margin-right: 10px;
             cursor: pointer;
-            &.selectedBtn{
+            &.selectedBtn {
               color: white;
               background-color: #2962ff;
               border: 1px solid #2962ff;
@@ -206,149 +214,149 @@
   }
 }
 .padding-top-bottom-20 {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 /* Detail */
 .details-main {
   display: grid;
   grid-template-columns: 60% 40%;
-    .left {
-        .existingUserHeadSection {
-        
-        }
-        .leadsList {
-        .leadDataBox {
-            margin-bottom: 2%;
-            width: 95%;
-            padding: 20px 10px;
-            display: grid;
-            grid-template-columns: 33% 13% 13% 13% 13% 15%;
-            cursor: pointer;
+  .left {
+    .existingUserHeadSection {
+    }
+    .leadsList {
+      .leadDataBox {
+        margin-bottom: 2%;
+        width: 95%;
+        padding: 20px 10px;
+        display: grid;
+        grid-template-columns: 33% 13% 13% 13% 13% 15%;
+        cursor: pointer;
 
-            .leadAvatar {
-            display: flex;
-            justify-content: center;
-            }
-            .label {
-            color: #475569;
-            font-size: 14px;
-            }
-            .leadValue {
-            font-weight: 600;
-            font-size: 14px;
-            }
+        .leadAvatar {
+          display: flex;
+          justify-content: center;
         }
-        .commonLeadInfoRowGrid {
-            display: grid;
-            grid-template-rows: 1fr 1fr;
+        .label {
+          color: #475569;
+          font-size: 14px;
         }
-        .commonLeadInfoColumnGrid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+        .leadValue {
+          font-weight: 600;
+          font-size: 14px;
         }
-        }
+      }
+      .commonLeadInfoRowGrid {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+      }
+      .commonLeadInfoColumnGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     }
-    .right {
-        .biCardsWrapper {
-        .biMainCardsCommon {
-            padding: 20px 10px;
-            margin-bottom: 3%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        .col-gap-20 {
-            grid-column-gap: 20px;
-        }
-        .padding-20 {
-            padding: 20px 10px;
-        }
-        .newLeadsCard,
-        .buyingScoreCard {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-        }
-        .newLeadsInfo {
-            display: flex;
-            flex-flow: column;
-            width: 100%;
-        }
-        .potentialRevenueInfo {
-                display: flex;
-                flex-flow: column;
-                justify-content: center;
-            }
-            .biValue {
-                font-size: 18px;
-                font-weight: 600;
-                color: blue;
-            }
-        }
+  }
+  .right {
+    .biCardsWrapper {
+      .biMainCardsCommon {
+        padding: 20px 10px;
+        margin-bottom: 3%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .col-gap-20 {
+        grid-column-gap: 20px;
+      }
+      .padding-20 {
+        padding: 20px 10px;
+      }
+      .newLeadsCard,
+      .buyingScoreCard {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+      .newLeadsInfo {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+      }
+      .potentialRevenueInfo {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+      }
+      .biValue {
+        font-size: 18px;
+        font-weight: 600;
+        color: blue;
+      }
     }
-    .existingUserHeadSection, .biHeadSection {
-        padding: 20px 0;
+  }
+  .existingUserHeadSection,
+  .biHeadSection {
+    padding: 20px 0;
 
-        h2 {
-            margin: 0;
-            font-size: 24px;
-            color: #475569;
-        }
-        span {
-            font-size: 14px;
-            color: #475569;
-        }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #475569;
     }
+    span {
+      font-size: 14px;
+      color: #475569;
+    }
+  }
 }
 
 /* Success Page*/
 .successPageMain {
-    background: #94A3B8;
+  background: #94a3b8;
 
-    .successPageWrapper {
-        display: flex;
-        flex-flow: column;
-        width: 40%;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
+  .successPageWrapper {
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .successMessage {
+    margin: 0 auto;
+    font-size: 36px;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    width: 65%;
+  }
+  .successSubMessage {
+    font-size: 24px;
+    color: #475569;
+  }
+  .successBtnWrappers {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    button {
+      border: none;
+      background-color: #e2e8f0;
+      color: #475569;
+      font-size: 16px;
+      border-radius: 2px;
     }
 
-    .successMessage {
-        margin: 0 auto;
-        font-size: 36px;
-        font-weight: 600;
-        color: #475569;
-        display: flex;
-        justify-content: center;
-        width: 65%;
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #475569;
+      font-weight: 600;
     }
-    .successSubMessage {
-        font-size: 24px;
-        color: #475569;
-    }
-    .successBtnWrappers {
-        display: flex;
-        width: 70%;
-        margin: 0 auto;
-        justify-content: space-between;
-
-        button {
-            border: none;
-            background-color: #E2E8F0;
-            color: #475569;
-            font-size: 16px;
-            border-radius: 2px;
-        }
-
-        a {
-            text-decoration: none;
-            font-size: 16px;
-            color: #475569;
-            font-weight: 600;
-        }
-    }
+  }
 }
 
-/* */ 
+/* */
 .MuiModal-root {
   .MuiPaper-root.MuiPaper-elevation {
     max-width: unset;
@@ -404,111 +412,112 @@
             font-size: 36px;
           }
         }
-        .card-bottom.green{
+        .card-bottom.green {
           color: #10b981;
           background: #ecfdf5;
         }
-        .card-bottom.yellow{
-          color: #F59E0B;
-          background: #FFFBEB;
+        .card-bottom.yellow {
+          color: #f59e0b;
+          background: #fffbeb;
         }
-        .card-bottom.red{
-          color: #F43F5E;
-          background:  #FFF1F2;
+        .card-bottom.red {
+          color: #f43f5e;
+          background: #fff1f2;
         }
       }
     }
   }
 }
 .leadPushNotification {
-    .leadHeadSection {
+  .leadHeadSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 10px 0;
+    align-items: center;
+
+    .leadInfo {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .leadScoreSection {
+      .leadScore {
         display: flex;
-        justify-content: space-between;
-        padding: 15px 0 10px 0;
+        justify-content: center;
+        background: #ecfdf5;
         align-items: center;
-
-        .leadInfo {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-        }
-        .leadScoreSection {
-            .leadScore {
-                display: flex;
-                justify-content: center;
-                background: #ECFDF5;
-                align-items: center;
-                flex-flow: column;
-                padding: 5px 10px;
-            }
-        }
+        flex-flow: column;
+        padding: 5px 10px;
+      }
     }
-    .leadLabelSection {
-        padding: 10px 0;
-    }
-    .leadPackageSection {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 20px;
-        padding: 10px 0;
+  }
+  .leadLabelSection {
+    padding: 10px 0;
+  }
+  .leadPackageSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    padding: 10px 0;
 
-        .leadPackageGold, .leadPackageFlex {
-            display: grid;
-            grid-template-rows: 1.5fr 1fr;
-        }
-
-        .leadBasicInfo {
-            padding: 10px 10px 0 10px;
-
-            .leadTypeLabel {
-                font-size: 18px;
-                color: #475569;
-                font-weight: 600;
-                line-height: 22px;
-            }
-        }
-        .leadScoreGold {
-            background: #F8FAFC;
-            padding: 10px;
-            color: #3B82F6;
-            display: flex;
-            flex-flow: column;
-            font-size: 14px;
-        }
-        .leadScoreFlex {
-            background: #F8FAFC;
-            padding: 10px;
-            color: #10B981;
-            display: flex;
-            flex-flow: column;
-            font-size: 14px;
-        }
+    .leadPackageGold,
+    .leadPackageFlex {
+      display: grid;
+      grid-template-rows: 1.5fr 1fr;
     }
-    .leadSettingsSection {
-        padding: 10px 0;
 
-        .settingsLabel {
-            font-size: 18px;
-            font-weight: 600;
-            color: #475569;
-        }
-        .settingsSubLabel {
-            font-size: 14px;
-            color: #475569;
-            padding: 6px 0;
-        }
-    }
-    .leadNoteSection {
-        padding: 10px 0;
-        width: 510px;
-        font-size: 14px;
-        line-height: 24px;
+    .leadBasicInfo {
+      padding: 10px 10px 0 10px;
 
-        span {
-            color: red;
-            font-weight: 600;
-        }
+      .leadTypeLabel {
+        font-size: 18px;
+        color: #475569;
+        font-weight: 600;
+        line-height: 22px;
+      }
     }
-    .leadSendNotificationBtn {
-        padding: 10px 0;
+    .leadScoreGold {
+      background: #f8fafc;
+      padding: 10px;
+      color: #3b82f6;
+      display: flex;
+      flex-flow: column;
+      font-size: 14px;
     }
+    .leadScoreFlex {
+      background: #f8fafc;
+      padding: 10px;
+      color: #10b981;
+      display: flex;
+      flex-flow: column;
+      font-size: 14px;
+    }
+  }
+  .leadSettingsSection {
+    padding: 10px 0;
+
+    .settingsLabel {
+      font-size: 18px;
+      font-weight: 600;
+      color: #475569;
+    }
+    .settingsSubLabel {
+      font-size: 14px;
+      color: #475569;
+      padding: 6px 0;
+    }
+  }
+  .leadNoteSection {
+    padding: 10px 0;
+    width: 510px;
+    font-size: 14px;
+    line-height: 24px;
+
+    span {
+      color: red;
+      font-weight: 600;
+    }
+  }
+  .leadSendNotificationBtn {
+    padding: 10px 0;
+  }
 }
