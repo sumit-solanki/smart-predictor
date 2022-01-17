@@ -18,6 +18,8 @@ const DetailedLeadCard = ({data}) => {
     let navigate = useNavigate();
 
     const [recommendedList,setRecommendedList] = useState([])
+    const [staffList, setStaffList] = useState([]);
+
     useEffect(() => {
       },[]);
 
@@ -27,6 +29,9 @@ const DetailedLeadCard = ({data}) => {
         fetch(`http://localhost:5000/v1/smartPredictor/${user.id}/ClientOffer`)
         .then(response => response.json())
         .then(data => setRecommendedList(data));
+        fetch('http://localhost:5000/v1/smartPredictor/-435/StaffList')
+        .then(response => response.json())
+        .then(data => setStaffList(data));
     }
 
     const handleChange = (event) => {
@@ -47,6 +52,29 @@ const DetailedLeadCard = ({data}) => {
             </Paper>
         )
     }
+
+    const getstaffList = ()=>{
+        return (
+            <FormControl fullWidth>
+                            <InputLabel id="assignRep-label">Select Sales Representative</InputLabel>
+                            <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={repName}
+                            label="Sales Representive"
+                            onChange={handleChange}
+                            >
+                                {staffList.map((staff)=>{
+                                    return (
+                                        <MenuItem value={staff.name}>{staff.name}</MenuItem>
+                                    )
+                                })}
+                                {/* <MenuItem value={'johnHarris'}>John Harris</MenuItem>
+                                <MenuItem value={'chrisWoakes'}>Chris Woakes</MenuItem>
+                                <MenuItem value={'benDavis'}>Ben Davis</MenuItem> */}
+                            </Select>
+                        </FormControl>
+        )};
 
     const renderLeadContent = () => {
         return (
@@ -104,20 +132,7 @@ const DetailedLeadCard = ({data}) => {
                     <div className='settingsLabel'>Lead Settings</div>
                     <div className='settingsSubLabel'>Assign Sales Representative</div>
                     <div className='selectRepresentative'>
-                        <FormControl fullWidth>
-                            <InputLabel id="assignRep-label">Select Sales Representative</InputLabel>
-                            <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={repName}
-                            label="Sales Representive"
-                            onChange={handleChange}
-                            >
-                                <MenuItem value={'johnHarris'}>John Harris</MenuItem>
-                                <MenuItem value={'chrisWoakes'}>Chris Woakes</MenuItem>
-                                <MenuItem value={'benDavis'}>Ben Davis</MenuItem>
-                            </Select>
-                        </FormControl>
+                      {getstaffList()}  
                     </div>
                 </div>
                 <div className='leadPromotionLabel'>Send promotion to user</div>
