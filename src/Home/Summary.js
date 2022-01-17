@@ -14,12 +14,13 @@ import revanue from "./img/revanue.svg";
 import classNames from "classnames";
 import { engagementData } from "./summary-data";
 import { isEmpty } from "lodash";
-import Loader from './../Loader';
+import Loader from "./../Loader";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
+  position:'relative'
 }));
 const staffData = [
   { name: "Group A", value: 70, color: "#0088FE" },
@@ -61,7 +62,7 @@ const Summary = () => {
         setApiData(response);
       })
 
-      .catch(err=> {
+      .catch((err) => {
         console.log("Fetch Error :-S", err);
       });
   }, []);
@@ -99,11 +100,8 @@ const Summary = () => {
     );
   };
 
-
-  if(isEmpty(apiData)){
-      return (
-        <Loader />
-      )
+  if (isEmpty(apiData)) {
+    return <Loader />;
   }
 
   return (
@@ -130,11 +128,18 @@ const Summary = () => {
             <div className="">
               <Item elevation={2}>
                 <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
+                <div className="custom-legand-wrapper-satff">
+                  <div className="legad-desc">Sales and marketing <span className="highlight-desc">{`(${apiData['StaffAndMarketingPercentage']}%)`}</span></div>
+                </div>
               </Item>
             </div>
             <div className="">
               <Item elevation={2}>
                 <StaffUtilization graphData={staffData} />
+                <div className="custom-legand-wrapper">
+                  <div className="legand-head">{`${apiData['staffUtilization']}%`}</div>
+                  <div className="legad-desc">staff utilization </div>
+                </div>
               </Item>
             </div>
           </div>

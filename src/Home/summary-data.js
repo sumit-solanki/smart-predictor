@@ -36,4 +36,5 @@ export const engagementData = {
   ],
   staffUtilization: 50,
   potentialRevenue: 80000,
+  StaffAndMarketingPercentage:40
 };
