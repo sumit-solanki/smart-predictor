@@ -129,7 +129,7 @@ const Summary = () => {
               <Item elevation={2}>
                 <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
                 <div className="custom-legand-wrapper-satff">
-                  <div className="legad-desc">staff utilization <span className="highlight-desc">{`(${apiData['StaffAndMarketingPercentage']}%)`}</span></div>
+                  <div className="legad-desc">Sales and marketing <span className="highlight-desc">{`(${apiData['StaffAndMarketingPercentage']}%)`}</span></div>
                 </div>
               </Item>
             </div>
