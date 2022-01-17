@@ -6,6 +6,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const DetailedLeadCard = ({data}) => {
     const [openDialog, setDialogVisiblity] = React.useState(false);
@@ -21,19 +25,21 @@ const DetailedLeadCard = ({data}) => {
         setRepName(event.target.value);
       };
     const renderLeadContent = () => {
-        console.log("selected lead", selectedLead);
         return (
             <div className='leadPushNotification'>
                 <div className='leadHeadSection'>
                     <div className='leadInfo'>
-                        <div className='leadAvatar'>X</div>
+                        <div className='leadAvatar'><img alt={selectedLead.name} src={leadAvatar} /></div>
                         <div className='leadDetails'>
                             <div className='leadName'>{selectedLead.name}</div>
                             <div className='leadPlace'>{selectedLead.place}</div>
                         </div>
                     </div>
                     <div className='leadScoreSection'>
-                        <div className='leadScore'>{selectedLead.leadScore}</div>
+                        <div className='leadScore'>
+                            <div className='leadScoreLabel'>Lead Score</div>
+                            <div className='leadScore'>{selectedLead.leadScore}</div>
+                        </div>                        
                     </div>
                 </div>
                 <div className='leadLabelSection'>
@@ -60,7 +66,7 @@ const DetailedLeadCard = ({data}) => {
                                 <div className='leadMoreInfo'>2 Times purchased</div>
                                 <div className='leadInfoRevenue'>{selectedLead.revenue}</div>
                             </div>
-                            <div className='leadConversionScore leadScoreGold'>
+                            <div className='leadConversionScore leadScoreFlex'>
                                 <span className='conversionScoreLabel'>Conversion score</span>
                                 <span className='conversionScoreValue'>50%</span>
                             </div>
@@ -71,7 +77,7 @@ const DetailedLeadCard = ({data}) => {
                     <div className='settingsLabel'>Lead Settings</div>
                     <div className='settingsSubLabel'>Assign Sales Representative</div>
                     <div className='selectRepresentative'>
-                        <FormControl>
+                        <FormControl fullWidth>
                             <InputLabel id="assignRep-label">Select Sales Representative</InputLabel>
                             <Select
                             labelId="demo-simple-select-label"
@@ -86,6 +92,17 @@ const DetailedLeadCard = ({data}) => {
                             </Select>
                         </FormControl>
                     </div>
+                </div>
+                <div className='leadPromotionLabel'>Send promotion to user</div>
+                <div className='leadPromotionOptions'>
+                    <FormControlLabel control={<Checkbox defaultChecked color="default" />} label="Email" />
+                    <FormControlLabel control={<Checkbox color="default" />} label="SMS" />
+                </div>
+                <div className='leadNoteSection'>
+                    <span>Note:</span> After sending a communication to a selected user this lead will automatically be added to the Lead Management sales pipeline.
+                </div>
+                <div className='leadSendNotificationBtn'>
+                    <Button variant="contained"><Link to="/successful">Send</Link></Button>
                 </div>
             </div>
         )

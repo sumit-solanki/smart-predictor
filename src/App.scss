@@ -200,7 +200,9 @@
     }
   }
 }
-
+.padding-top-bottom-20 {
+    padding: 20px 0;
+}
 /* Detail */
 .details-main {
   display: grid;
@@ -292,6 +294,56 @@
     }
 }
 
+/* Success Page*/
+.successPageMain {
+    background: #94A3B8;
+
+    .successPageWrapper {
+        display: flex;
+        flex-flow: column;
+        width: 40%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .successMessage {
+        margin: 0 auto;
+        font-size: 36px;
+        font-weight: 600;
+        color: #475569;
+        display: flex;
+        justify-content: center;
+        width: 65%;
+    }
+    .successSubMessage {
+        font-size: 24px;
+        color: #475569;
+    }
+    .successBtnWrappers {
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            background-color: #E2E8F0;
+            color: #475569;
+            font-size: 16px;
+            border-radius: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #475569;
+            font-weight: 600;
+        }
+    }
+}
+
+/* */ 
 .MuiModal-root {
   .MuiPaper-root.MuiPaper-elevation {
     max-width: unset;
@@ -362,4 +414,96 @@
       }
     }
   }
+}
+.leadPushNotification {
+    .leadHeadSection {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0 10px 0;
+        align-items: center;
+
+        .leadInfo {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .leadScoreSection {
+            .leadScore {
+                display: flex;
+                justify-content: center;
+                background: #ECFDF5;
+                align-items: center;
+                flex-flow: column;
+                padding: 5px 10px;
+            }
+        }
+    }
+    .leadLabelSection {
+        padding: 10px 0;
+    }
+    .leadPackageSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+        padding: 10px 0;
+
+        .leadPackageGold, .leadPackageFlex {
+            display: grid;
+            grid-template-rows: 1.5fr 1fr;
+        }
+
+        .leadBasicInfo {
+            padding: 10px 10px 0 10px;
+
+            .leadTypeLabel {
+                font-size: 18px;
+                color: #475569;
+                font-weight: 600;
+                line-height: 22px;
+            }
+        }
+        .leadScoreGold {
+            background: #F8FAFC;
+            padding: 10px;
+            color: #3B82F6;
+            display: flex;
+            flex-flow: column;
+            font-size: 14px;
+        }
+        .leadScoreFlex {
+            background: #F8FAFC;
+            padding: 10px;
+            color: #10B981;
+            display: flex;
+            flex-flow: column;
+            font-size: 14px;
+        }
+    }
+    .leadSettingsSection {
+        padding: 10px 0;
+
+        .settingsLabel {
+            font-size: 18px;
+            font-weight: 600;
+            color: #475569;
+        }
+        .settingsSubLabel {
+            font-size: 14px;
+            color: #475569;
+            padding: 6px 0;
+        }
+    }
+    .leadNoteSection {
+        padding: 10px 0;
+        width: 510px;
+        font-size: 14px;
+        line-height: 24px;
+
+        span {
+            color: red;
+            font-weight: 600;
+        }
+    }
+    .leadSendNotificationBtn {
+        padding: 10px 0;
+    }
 }
