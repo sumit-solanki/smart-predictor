@@ -6,7 +6,6 @@ import PredictorWidget from './PredictorWidget';
 import SalesBarChart from './SalesBarChart';
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  textAlign: "center",
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
@@ -22,14 +21,14 @@ const Summary = () => {
           <div className="data-detail">Lead conversion score</div>
         </div>
         <div className="card-right">
-          <img src={CardImg} />
+          <img src={CardImg} alt="" />
         </div>
       </div>
     );
   };
 
   return (
-    <div className="summary-main  common-wrapper ">
+    <div className="summary-main commonContentWrapper">
       <div className="left">
         <div className="engagement-wrapper">
           <div className="heading">
@@ -54,7 +53,7 @@ const Summary = () => {
                     <div className="data-detail">Lead conversion score</div>
                   </div>
                   <div className="card-right">
-                    <img src={CardImg} />
+                    <img src={CardImg} alt="" />
                   </div>
                 </div>
               </Item>
@@ -89,7 +88,7 @@ const Summary = () => {
                     <div className="data-detail">Potential revenue</div>
                   </div>
                   <div className="card-right">
-                    <img src={CardImg} />
+                    <img src={CardImg} alt=""/>
                   </div>
                 </div>
               </Item>

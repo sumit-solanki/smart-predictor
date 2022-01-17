@@ -4,6 +4,7 @@ import arrow from "./arrow.svg";
 import CustomizedDialogs from "./CustomizedDialogs";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -17,7 +18,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const PredictorWidget = () => {
   const [openDialog, setDialogVisiblity] = React.useState(false);
+  let navigate = useNavigate();
 
+  const naviateToDetail = () => {
+    navigate("detail");
+  };
   const renderDialogContent = () => {
     return (
       <div className="summary-dialog-wrapper">
@@ -28,7 +33,7 @@ const PredictorWidget = () => {
           </div>
         </div>
         <div className="dialog-content">
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">
@@ -45,7 +50,7 @@ const PredictorWidget = () => {
               </div>
             </Item>
           </div>
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">
@@ -62,7 +67,7 @@ const PredictorWidget = () => {
               </div>
             </Item>
           </div>
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">

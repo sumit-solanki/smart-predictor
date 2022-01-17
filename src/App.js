@@ -1,6 +1,5 @@
 import "./App.scss";
-import Home from "./Home";
-import { BrowserRouter, Switch, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import Summary from "./Home/Summary";
 import Details from "./Home/Details";
@@ -12,9 +11,8 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/summary" element={<Summary />} />
             <Route path="/detail" element={<Details />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Summary />} />
           </Routes>
         </BrowserRouter>
       </div>
