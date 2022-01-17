@@ -111,7 +111,7 @@ const DetailedLeadCard = ({data}) => {
             <Paper elevation={3} className='leadDataBox' onClick={()=>showLeadDetils(data)} >
                 <div className='userDetails commonLeadInfoColumnGrid'>
                     <div className='leadAvatar'>
-                        <img src={leadAvatar} />
+                        <img src={leadAvatar} alt="" />
                     </div>
                     <div className='leadInfo commonLeadInfoRowGrid'>
                         <span className='leadName'>{data.name}</span>

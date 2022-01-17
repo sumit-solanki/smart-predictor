@@ -4,10 +4,10 @@ import arrow from "./arrow.svg";
 import CustomizedDialogs from "./CustomizedDialogs";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  textAlign: "center",
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
@@ -17,7 +17,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const PredictorWidget = () => {
   const [openDialog, setDialogVisiblity] = React.useState(false);
+  let navigate = useNavigate();
 
+  const naviateToDetail = () => {
+    navigate("detail");
+  };
   const renderDialogContent = () => {
     return (
       <div className="summary-dialog-wrapper">
@@ -28,7 +32,7 @@ const PredictorWidget = () => {
           </div>
         </div>
         <div className="dialog-content">
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">
@@ -45,7 +49,7 @@ const PredictorWidget = () => {
               </div>
             </Item>
           </div>
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">
@@ -62,7 +66,7 @@ const PredictorWidget = () => {
               </div>
             </Item>
           </div>
-          <div className="single-dialog-card">
+          <div className="single-dialog-card" onClick={naviateToDetail}>
             <Item elevation={2}>
               <div className="card-inner">
                 <div className="card-top">
@@ -88,7 +92,7 @@ const PredictorWidget = () => {
       <div className="widget-head">Smart predictor</div>
       <div className="widget-content">
         <div className="card-img">
-          <img src={targetSvg} />
+          <img src={targetSvg}  alt=""/>
         </div>
         <div className="card-title">choose your opportunity</div>
         <div className="card-dsc">
@@ -104,7 +108,7 @@ const PredictorWidget = () => {
             className="predictor-btn"
             onClick={() => setDialogVisiblity(true)}
           >
-            Run Predictor <img src={arrow} />{" "}
+            Run Predictor <img src={arrow} alt="" />{" "}
           </button>
         </div>
       </div>

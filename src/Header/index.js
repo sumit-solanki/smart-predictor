@@ -1,5 +1,4 @@
 import React from "react";
-import { Link, Router } from "react-router-dom";
 import logo from './smartPredictorLogo.svg';
 
 const Header = () => {
@@ -7,7 +6,7 @@ const Header = () => {
     <div className="headerMain">
       <div className="headerInfo">
         <div className="logo">
-          <img src={logo} />
+          <img src={logo} alt="" />
         </div>
         <div className="headerLabel">Smart Predictor</div>
       </div>

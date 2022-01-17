@@ -22,7 +22,7 @@ const BusinessImpactCards = () => {
                         <span className='biLabel'>New Leads</span>
                     </div>
                     <div className='newLeadsAvatar'>
-                        <img src={newLeadsAvatar} />
+                        <img src={newLeadsAvatar} alt="" />
                     </div>
                 </Paper>
                 <Paper elevation={3} className='buyingScoreCard padding-20'>
@@ -31,7 +31,7 @@ const BusinessImpactCards = () => {
                         <span className='biLabel'>Buying score</span>
                     </div>
                     <div className='newLeadsAvatar'>
-                        <img src={buyingScoreAvatar} />
+                        <img src={buyingScoreAvatar} alt="" />
                     </div>
                 </Paper>
             </div>
