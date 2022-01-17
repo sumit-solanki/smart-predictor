@@ -31,7 +31,7 @@ const BusinessImpactCards = () => {
                         <span className='biLabel'>Buying score</span>
                     </div>
                     <div className='newLeadsAvatar'>
-                        <img src={buyingScoreAvatar} />
+                        <img src={buyingScoreAvatar} alt="" />
                     </div>
                 </Paper>
             </div>

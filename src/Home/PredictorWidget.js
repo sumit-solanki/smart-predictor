@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
-  textAlign: "center",
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
@@ -93,7 +92,7 @@ const PredictorWidget = () => {
       <div className="widget-head">Smart predictor</div>
       <div className="widget-content">
         <div className="card-img">
-          <img src={targetSvg} />
+          <img src={targetSvg}  alt=""/>
         </div>
         <div className="card-title">choose your opportunity</div>
         <div className="card-dsc">
@@ -109,7 +108,7 @@ const PredictorWidget = () => {
             className="predictor-btn"
             onClick={() => setDialogVisiblity(true)}
           >
-            Run Predictor <img src={arrow} />{" "}
+            Run Predictor <img src={arrow} alt="" />{" "}
           </button>
         </div>
       </div>
