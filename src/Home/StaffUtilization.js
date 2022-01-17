@@ -23,7 +23,7 @@ export default function StaffUtilization({graphData}) {
           fill="#8884d8"
           dataKey="value"
         >
-          <Label value="Utilization" offset={0} position={"center"} />
+          {/* <Label value="Utilization" offset={0} position={"center"} /> */}
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={entry.color} />
           ))}

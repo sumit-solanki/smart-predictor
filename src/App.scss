@@ -104,10 +104,10 @@
     .data-title {
       font-size: 36px;
       font-weight: 400;
-      &.total-loss{
-        color: #E53935;
+      &.total-loss {
+        color: #e53935;
       }
-      .lead-score-span{
+      .lead-score-span {
         // margin-left: -10px;
       }
     }
@@ -519,5 +519,36 @@
   }
   .leadSendNotificationBtn {
     padding: 10px 0;
+  }
+}
+
+.custom-legand-wrapper {
+  position: absolute;
+  bottom: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 87%;
+  .legand-head {
+    font-size: 36px;
+    color: #475569;
+  }
+  .legad-desc {
+    font-size: 14px;
+  }
+}
+.custom-legand-wrapper-satff {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  .legad-desc {
+    font-weight: bold;
+    font-size: 14px;
+    color: #475569;
+  }
+  .highlight-desc{
+    color: #00B0FF;
   }
 }
