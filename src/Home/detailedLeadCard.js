@@ -9,12 +9,13 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const DetailedLeadCard = ({data}) => {
     const [openDialog, setDialogVisiblity] = React.useState(false);
     const [selectedLead, setSelectedLead] = React.useState('');
     const [repName, setRepName] = React.useState('');
+    let navigate = useNavigate();
 
     const showLeadDetils = (user) => {
         setDialogVisiblity(true);
@@ -102,7 +103,7 @@ const DetailedLeadCard = ({data}) => {
                     <span>Note:</span> After sending a communication to a selected user this lead will automatically be added to the Lead Management sales pipeline.
                 </div>
                 <div className='leadSendNotificationBtn'>
-                    <Button variant="contained"><Link to="/successful">Send</Link></Button>
+                    <Button variant="contained" onClick={()=>navigate("/successful")}>Send</Button>
                 </div>
             </div>
         )

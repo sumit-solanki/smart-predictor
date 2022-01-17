@@ -3,6 +3,14 @@ import Paper from '@mui/material/Paper';
 import RevenueLineChart from './RevenueLineChart';
 import newLeadsAvatar from './newLeads.png';
 import buyingScoreAvatar from './buyingScore.png';
+import StaffUtilization from './StaffUtilization';
+const staffData =[
+    { name: "Group A", value: 70, color:"#0088FE" },
+  
+    { name: "Group D", value: 20, color:"#10B981" },
+    { name: "", value: 10 , color:"#E5E5E5" },
+
+  ];
 const BusinessImpactCards = () => {
     return (
         <div className='biCardsWrapper'>
@@ -41,7 +49,7 @@ const BusinessImpactCards = () => {
                     <span className='biLabel'>Staff Utilization</span>
                 </div>
                 <div className='potentialRevenueGraph'>
-                    X
+                <StaffUtilization graphData={staffData} />
                 </div>
             </Paper>
         </div>

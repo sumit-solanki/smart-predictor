@@ -4,14 +4,17 @@ import { styled } from "@mui/material/styles";
 import CardImg from "./CardSvg.svg";
 import PredictorWidget from './PredictorWidget';
 import SalesBarChart from './SalesBarChart';
+import StaffUtilization from './StaffUtilization';
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
-  // height: 60,
-  // lineHeight: '60px',
 }));
+const staffData =[
+    { name: "Group A", value: 70, color:"#0088FE" },
+    { name: "", value: 10 , color:"#E5E5E5" },
+  ];
 const Summary = () => {
   const renderDataCard = () => {
     return (
@@ -64,7 +67,9 @@ const Summary = () => {
               </Item>
             </div>
             <div className="">
-              <Item elevation={2}>small</Item>
+              <Item elevation={2}>
+                  <StaffUtilization  graphData={staffData} />
+              </Item>
             </div>
           </div>
         </div>

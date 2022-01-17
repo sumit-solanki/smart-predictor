@@ -6,6 +6,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer
 } from "recharts";
 
 const data = [
@@ -41,9 +42,8 @@ const data = [
 
 export default function RevenueLineChart() {
   return (
+    <ResponsiveContainer width="100%" height={150}>
     <LineChart
-      width={370}
-      height={125}
       data={data}
       margin={{
         top: 5,
@@ -64,5 +64,6 @@ export default function RevenueLineChart() {
         activeDot={{ r: 8 }}
       />
     </LineChart>
+    </ResponsiveContainer>
   );
 }

@@ -178,6 +178,11 @@
             color: #475569;
             margin-right: 10px;
             cursor: pointer;
+            &.selectedBtn{
+              color: white;
+              background-color: #2962ff;
+              border: 1px solid #2962ff;
+            }
           }
         }
         .main-btn-row {

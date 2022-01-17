@@ -5,7 +5,7 @@ import CustomizedDialogs from "./CustomizedDialogs";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-
+import classNames from "classnames";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
@@ -17,6 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const PredictorWidget = () => {
   const [openDialog, setDialogVisiblity] = React.useState(false);
+  const [selectedDay,setSelectedDay] = React.useState("today")
   let navigate = useNavigate();
 
   const naviateToDetail = () => {
@@ -87,6 +88,9 @@ const PredictorWidget = () => {
       </div>
     );
   };
+  const handleOnClickOnDays = (selectedDay) =>{
+    setSelectedDay(selectedDay)
+  }
   return (
     <div className="widget-wrapper">
       <div className="widget-head">Smart predictor</div>
@@ -99,9 +103,9 @@ const PredictorWidget = () => {
           Lorem Ipsum eaecenas maximus urna congue urna congue.
         </div>
         <div className="button-row">
-          <button className="widget-btn">Today</button>
-          <button className="widget-btn">Next 7 Days</button>
-          <button className="widget-btn">Next 30 Days</button>
+          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "today"})} onClick={()=>handleOnClickOnDays("today")}>Today</button>
+          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "next7"})} onClick={()=>handleOnClickOnDays("next7")}>Next 7 Days</button>
+          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "next30"})} onClick={()=>handleOnClickOnDays("next30")}>Next 30 Days</button>
         </div>
         <div className="main-btn-row">
           <button
