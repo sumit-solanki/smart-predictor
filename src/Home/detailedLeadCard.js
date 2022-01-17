@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import Paper from '@mui/material/Paper';
 import leadAvatar from './leadAvatar.png';
 import CustomizedDialogs from "./CustomizedDialogs";
@@ -17,14 +17,37 @@ const DetailedLeadCard = ({data}) => {
     const [repName, setRepName] = React.useState('');
     let navigate = useNavigate();
 
+    const [recommendedList,setRecommendedList] = useState([])
+    useEffect(() => {
+      },[]);
+
     const showLeadDetils = (user) => {
         setDialogVisiblity(true);
         setSelectedLead(user);
+        fetch(`http://localhost:5000/v1/smartPredictor/${user.id}/ClientOffer`)
+        .then(response => response.json())
+        .then(data => setRecommendedList(data));
     }
 
     const handleChange = (event) => {
         setRepName(event.target.value);
       };
+      const displayMembershipList = () => {
+        return (
+            <Paper elevation={3} className='leadPackageGold'>
+                <div className='leadBasicInfo'>
+                    <div className='leadTypeLabel'>Gold Membership</div>
+                    <div className='leadMoreInfo'>2 Times purchased</div>
+                    <div className='leadInfoRevenue'>{selectedLead.revenue}</div>
+                </div>
+                <div className='leadConversionScore leadScoreGold'>
+                    <span className='conversionScoreLabel'>Conversion score</span>
+                    <span className='conversionScoreValue'>50%</span>
+                </div>
+            </Paper>
+        )
+    }
+
     const renderLeadContent = () => {
         return (
             <div className='leadPushNotification'>
@@ -48,7 +71,7 @@ const DetailedLeadCard = ({data}) => {
                 </div>
                 <div className='leadPackageSection'>
                     <div className='leadPackage'>
-                        <Paper elevation={3} className='leadPackageGold'>
+                        {/* <Paper elevation={3} className='leadPackageGold'>
                             <div className='leadBasicInfo'>
                                 <div className='leadTypeLabel'>Gold Membership</div>
                                 <div className='leadMoreInfo'>2 Times purchased</div>
@@ -58,7 +81,10 @@ const DetailedLeadCard = ({data}) => {
                                 <span className='conversionScoreLabel'>Conversion score</span>
                                 <span className='conversionScoreValue'>50%</span>
                             </div>
-                        </Paper>
+                        </Paper> */}
+                        {
+                            displayMembershipList()
+                        }
                     </div>
                     <div className='leadPackage'>
                         <Paper elevation={3} className='leadPackageFlex'>
