@@ -8,7 +8,7 @@ const Header = () => {
         <div className="logo">
           <img src={logo} alt="" />
         </div>
-        <div className="headerLabel">Smart Predictor</div>
+        {/* <div className="headerLabel">Smart Predictor</div> */}
       </div>
       <div className="studioInfo">
         <div className="studioName">Power Fitness Studio</div>

@@ -42,7 +42,7 @@ const data = [
 
 export default function SalesBarChart() {
   return (
-    <ResponsiveContainer width="95%" height={200}>
+    <ResponsiveContainer width="100%" height={200}>
       <BarChart
         // width={"100%"}
         // height={200}
