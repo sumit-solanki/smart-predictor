@@ -1,34 +1,110 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
-import CardImg from "./CardSvg.svg";
-import PredictorWidget from './PredictorWidget';
-import SalesBarChart from './SalesBarChart';
-import StaffUtilization from './StaffUtilization';
+import PredictorWidget from "./PredictorWidget";
+import SalesBarChart from "./SalesBarChart";
+import StaffUtilization from "./StaffUtilization";
+
+import CardImg from "./img/CardSvg.svg";
+import existingUser from "./img/existingUser.svg";
+import inactiveUser from "./img/inactiveUser.svg";
+import newUserIcon from "./img/newUserIcon.svg";
+import potentialRevanue from "./img/potentialRevanue.svg";
+import revanue from "./img/revanue.svg";
+import classNames from "classnames";
+import { engagementData } from "./summary-data";
+import { isEmpty } from "lodash";
+import Loader from './../Loader';
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
 }));
-const staffData =[
-    { name: "Group A", value: 70, color:"#0088FE" },
-    { name: "", value: 10 , color:"#E5E5E5" },
-  ];
+const staffData = [
+  { name: "Group A", value: 70, color: "#0088FE" },
+  { name: "", value: 10, color: "#E5E5E5" },
+];
+const titleNameMap = {
+  leadConversionScore: "Lead conversion score",
+  newUser: "New user",
+  inactiveUser: "Inactive user",
+  existingUser: "Existing user",
+  totalLossRevenue: "Total loss of revenue",
+  potentialRevenue: "Potential revenue",
+};
+const imgSrcMap = {
+  leadConversionScore: CardImg,
+  newUser: newUserIcon,
+  inactiveUser: inactiveUser,
+  existingUser: existingUser,
+  totalLossRevenue: revanue,
+  potentialRevenue: potentialRevanue,
+};
+
+const renderDataKeyArray = [
+  "leadConversionScore",
+  "newUser",
+  "inactiveUser",
+  "existingUser",
+  "totalLossRevenue",
+];
+
 const Summary = () => {
-  const renderDataCard = () => {
+  const [apiData, setApiData] = useState({});
+
+  useEffect(() => {
+    fetch("https://pokeapi.co/api/v2/pokemon/1")
+      //   .then(response => response.data)
+      .then((response) => {
+        console.log("res-->>>", response);
+        setApiData(engagementData);
+      })
+
+      .catch(err=> {
+        console.log("Fetch Error :-S", err);
+      });
+  }, []);
+  staffData[0].value = apiData["staffUtilization"];
+  staffData[1].value = 100 - apiData["staffUtilization"];
+
+  const renderDataCard = (data) => {
     return (
       <div className="single-card">
         <div className="card-left">
-          <div className="data-title">20%</div>
-          <div className="data-detail">Lead conversion score</div>
+          <div
+            className={classNames("data-title", {
+              "total-loss": data === "totalLossRevenue",
+            })}
+          >
+            {data === "totalLossRevenue" && (
+              <span className="total-loss-span">$</span>
+            )}
+            {apiData[data]}
+            {data === "leadConversionScore" && (
+              <span className="lead-score-span">%</span>
+            )}
+          </div>
+          <div className="data-detail">{titleNameMap[data]}</div>
+          {data === "totalLossRevenue" && (
+            <div className="data-detail-desc">
+              How did we calculate the revenue lose?
+            </div>
+          )}
         </div>
         <div className="card-right">
-          <img src={CardImg} alt="" />
+          <img src={imgSrcMap[data]} alt="" />
         </div>
       </div>
     );
   };
+
+
+  if(isEmpty(apiData)){
+      return (
+        <Loader />
+      )
+  }
 
   return (
     <div className="summary-main commonContentWrapper">
@@ -41,34 +117,24 @@ const Summary = () => {
             </div>
           </div>
           <div className="main-detail">
-            {[0, 1, 2, 3].map((elevation) => (
-              <div className="">
-                <Item key={elevation} elevation={2}>
-                  {renderDataCard()}
+            {renderDataKeyArray.map((item) => (
+              <div
+                className={classNames({ large: item === "totalLossRevenue" })}
+              >
+                <Item key={JSON.stringify(item)} elevation={2}>
+                  {renderDataCard(item)}
                 </Item>
               </div>
             ))}
-            <div className="large">
+
+            <div className="">
               <Item elevation={2}>
-                <div className="single-card">
-                  <div className="card-left">
-                    <div className="data-title">20%</div>
-                    <div className="data-detail">Lead conversion score</div>
-                  </div>
-                  <div className="card-right">
-                    <img src={CardImg} alt="" />
-                  </div>
-                </div>
+                <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
               </Item>
             </div>
             <div className="">
               <Item elevation={2}>
-                  <SalesBarChart />
-              </Item>
-            </div>
-            <div className="">
-              <Item elevation={2}>
-                  <StaffUtilization  graphData={staffData} />
+                <StaffUtilization graphData={staffData} />
               </Item>
             </div>
           </div>
@@ -83,21 +149,21 @@ const Summary = () => {
         </div>
         <div className="lead-detail">
           <div className="predictor-wrapper">
-          <PredictorWidget />
+            <PredictorWidget />
           </div>
           <div className="large">
-              <Item elevation={2}>
-                <div className="single-card">
-                  <div className="card-left">
-                    <div className="data-title">~$80,000</div>
-                    <div className="data-detail">Potential revenue</div>
-                  </div>
-                  <div className="card-right">
-                    <img src={CardImg} alt=""/>
-                  </div>
+            <Item elevation={2}>
+              <div className="single-card">
+                <div className="card-left">
+                  <div className="data-title">{`~${apiData["potentialRevenue"]}`}</div>
+                  <div className="data-detail">Potential revenue</div>
                 </div>
-              </Item>
-            </div>
+                <div className="card-right">
+                  <img src={imgSrcMap["potentialRevenue"]} alt="" />
+                </div>
+              </div>
+            </Item>
+          </div>
         </div>
       </div>
     </div>

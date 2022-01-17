@@ -1,52 +1,12 @@
 import React from "react";
 import { BarChart, Bar, ResponsiveContainer, Tooltip } from "recharts";
 
-const data = [
-  {
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    pv: 4300,
-    amt: 2100,
-  },
-  {
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    pv: 1398,
-    amt: 2210,
-  },
-];
-
-export default function SalesBarChart() {
+export default function SalesBarChart({graphData}) {
   return (
     <ResponsiveContainer width="100%" height={200}>
       <BarChart
-        // width={"100%"}
-        // height={200}
-        data={data}
+
+        data={graphData}
         margin={{
           top: 5,
           right: 30,
