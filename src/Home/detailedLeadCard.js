@@ -28,7 +28,7 @@ const DetailedLeadCard = ({data}) => {
             <div className='leadPushNotification'>
                 <div className='leadHeadSection'>
                     <div className='leadInfo'>
-                        <div className='leadAvatar'><img src={leadAvatar} /></div>
+                        <div className='leadAvatar'><img alt={selectedLead.name} src={leadAvatar} /></div>
                         <div className='leadDetails'>
                             <div className='leadName'>{selectedLead.name}</div>
                             <div className='leadPlace'>{selectedLead.place}</div>
