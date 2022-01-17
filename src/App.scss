@@ -189,7 +189,9 @@
     }
   }
 }
-
+.padding-top-bottom-20 {
+    padding: 20px 0;
+}
 /* Detail */
 .details-main {
   display: grid;
@@ -281,6 +283,56 @@
     }
 }
 
+/* Success Page*/
+.successPageMain {
+    background: #94A3B8;
+
+    .successPageWrapper {
+        display: flex;
+        flex-flow: column;
+        width: 40%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .successMessage {
+        margin: 0 auto;
+        font-size: 36px;
+        font-weight: 600;
+        color: #475569;
+        display: flex;
+        justify-content: center;
+        width: 65%;
+    }
+    .successSubMessage {
+        font-size: 24px;
+        color: #475569;
+    }
+    .successBtnWrappers {
+        display: flex;
+        width: 70%;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            background-color: #E2E8F0;
+            color: #475569;
+            font-size: 16px;
+            border-radius: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #475569;
+            font-weight: 600;
+        }
+    }
+}
+
+/* */ 
 .MuiModal-root {
   .MuiPaper-root.MuiPaper-elevation {
     max-width: unset;

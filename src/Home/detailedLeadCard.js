@@ -9,6 +9,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const DetailedLeadCard = ({data}) => {
     const [openDialog, setDialogVisiblity] = React.useState(false);
@@ -94,14 +95,14 @@ const DetailedLeadCard = ({data}) => {
                 </div>
                 <div className='leadPromotionLabel'>Send promotion to user</div>
                 <div className='leadPromotionOptions'>
-                    <FormControlLabel control={<Checkbox defaultChecked />} label="Email" />
-                    <FormControlLabel control={<Checkbox />} label="SMS" />
+                    <FormControlLabel control={<Checkbox defaultChecked color="default" />} label="Email" />
+                    <FormControlLabel control={<Checkbox color="default" />} label="SMS" />
                 </div>
                 <div className='leadNoteSection'>
                     <span>Note:</span> After sending a communication to a selected user this lead will automatically be added to the Lead Management sales pipeline.
                 </div>
                 <div className='leadSendNotificationBtn'>
-                    <Button variant="contained">Send</Button>
+                    <Button variant="contained"><Link to="/successful">Send</Link></Button>
                 </div>
             </div>
         )
