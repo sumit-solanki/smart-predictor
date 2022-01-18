@@ -6,6 +6,7 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
+import {widgetData} from './datawidget-data';
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
@@ -91,6 +92,18 @@ const PredictorWidget = () => {
   const handleOnClickOnDays = (selectedDay) =>{
     setSelectedDay(selectedDay)
   }
+  const handleClick = () =>{
+    fetch("https://pokeapi.co/api/v2/pokemon/1")
+      //   .then(response => response.data)
+      .then((response) => {
+        console.log("res-->>>", response);
+        setApiData(engagementData);
+      })
+
+      .catch((err) => {
+        console.log("Fetch Error :-S", err);
+      });
+  }
   return (
     <div className="widget-wrapper">
       <div className="widget-head">Smart predictor</div>
@@ -110,7 +123,7 @@ const PredictorWidget = () => {
         <div className="main-btn-row">
           <button
             className="predictor-btn"
-            onClick={() => setDialogVisiblity(true)}
+            onClick={handleClick}
           >
             Run Predictor <img src={arrow} alt="" />{" "}
           </button>
