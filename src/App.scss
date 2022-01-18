@@ -1,5 +1,7 @@
 /* App.js & common */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 .App {
+  font-family: 'Inter', sans-serif;
   height: 100vh;
   width: 100%;
 }
@@ -258,12 +260,18 @@
       .commonLeadInfoColumnGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        
+        
       }
+      
       .leadScoreInfo {
         background: hsl(152, 81%, 96%);
-        padding: 0 10px;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
       }
     }
+   
   }
   .right {
     .biCardsWrapper {
@@ -576,4 +584,11 @@
   .highlight-desc {
     color: #00b0ff;
   }
+}
+
+.leadName{
+  color: #475569;
+  font-size: 18px;
+  font-weight: 600
+
 }
