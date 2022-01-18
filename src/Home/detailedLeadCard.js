@@ -48,8 +48,8 @@ const DetailedLeadCard = ({data}) => {
                         <div className='leadInfoRevenue'>{'Revenue $'}{list.revenue}</div>
                     </div>
                     <div className='leadConversionScore leadScoreGold'>
-                        <span className='conversionScoreLabel'>{'Conversion Score '}{list.conversionScore}%</span>
                         <span className='conversionScoreValue'>{list.review}{' Review'}</span>
+                        <span className='conversionScoreLabel'>{'Conversion Score '}{list.conversionScore}%</span>
                     </div>
                 </Paper>)
           })
@@ -178,11 +178,11 @@ const DetailedLeadCard = ({data}) => {
                 </div>
                 <div className='leadRevenueInfo commonLeadInfoRowGrid'>
                     <span className='label'>Revenue</span>
-                    <span className='leadValue'>{data.revenue}</span>
+                    <span className='leadValue'>${data.revenue}</span>
                 </div>
-                <div className='leadScoreInfo commonLeadInfoRowGrid'>
+                <div className={data.leadScore>30 ?"leadScoreInfo commonLeadInfoRowGrid":"leadScoreInfo commonLeadInfoRowGrid bgcoloryellow"}>
                     <span className='label'>Lead Score</span>
-                    <span className='leadValue'>{data.leadScore}</span>
+                    <span className='leadValue'>{data.leadScore}%</span>
                 </div>
             </Paper>
             <CustomizedDialogs

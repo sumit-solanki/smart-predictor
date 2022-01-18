@@ -269,6 +269,22 @@
         align-items: center;
         text-align: center;
         padding: 10px;
+        .label{
+          color: #475569;
+          font-size: 14px;
+          font-weight: 700;
+        }
+        .leadValue{
+          color: #10B981;
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+      .bgcoloryellow{
+        background: #FFFBEB;
+        .leadValue{
+          color: #F59E0B;
+        }
       }
     }
    
