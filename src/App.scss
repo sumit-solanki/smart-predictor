@@ -469,6 +469,7 @@
   }
 }
 .leadPushNotification {
+  padding: 0px 20px;
   .leadHeadSection {
     display: flex;
     justify-content: space-between;
@@ -491,7 +492,7 @@
     }
   }
   .leadLabelSection {
-    padding: 10px 0;
+    padding: 25px 0;
   }
   .leadPackageSection {
     .leadPackage {
@@ -514,14 +515,17 @@
         color: #475569;
         font-weight: 700;
         line-height: 22px;
+        padding-bottom: 5px;
       }
       .leadMoreInfo {
         color: #94A3B8;
         font-weight: 200;
+        padding-bottom: 5px;
     }
     .leadInfoRevenue {
         color: #94A3B8;
         font-weight: 600;
+        padding-bottom: 5px;
     }
 
     }
@@ -547,7 +551,7 @@
     }
   }
   .leadSettingsSection {
-    padding: 10px 0;
+    padding: 25px 0;
 
     .settingsLabel {
       font-size: 20px;
@@ -561,7 +565,7 @@
     }
   }
   .leadNoteSection {
-    padding: 10px 0;
+    padding: 25px 0;
     width: 510px;
     font-size: 18px;
     line-height: 24px;

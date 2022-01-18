@@ -45,10 +45,10 @@ const DetailedLeadCard = ({data}) => {
                 <div className="leadBasicInfo">
                   <div className="leadTypeLabel">{list.name}</div>
                   <div className="leadMoreInfo">{list.timesOfPurchased}</div>
-                  <span className="conversionScoreValue" style={{ color: "#94A3B8" }}>
+                  {/* <span className="conversionScoreValue" style={{ color: "#94A3B8" }}>
                     {list.review}
                     {" Review"}
-                  </span>
+                  </span> */}
                   <div className="leadInfoRevenue">
                     {"Revenue $"}
                     {list.revenue}
@@ -129,7 +129,7 @@ const DetailedLeadCard = ({data}) => {
                     <span>Note:</span> After sending a communication to a selected user this lead will automatically be added to the Lead Management sales pipeline.
                 </div>
                 <div className='leadSendNotificationBtn'>
-                    <Button variant="contained" onClick={()=>navigate("/successful")}>Send</Button>
+                    <Button variant="contained" size="large" onClick={()=>navigate("/successful")}>Send</Button>
                 </div>
             </div>
         )
