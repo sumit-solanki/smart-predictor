@@ -10,6 +10,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import { List } from '@mui/material';
 
 const DetailedLeadCard = ({data}) => {
     const [openDialog, setDialogVisiblity] = React.useState(false);
@@ -26,9 +27,9 @@ const DetailedLeadCard = ({data}) => {
     const showLeadDetils = (user) => {
         setDialogVisiblity(true);
         setSelectedLead(user);
-        fetch(`http://localhost:5000/v1/smartPredictor/${user.id}/ClientOffer`)
+        fetch(`http://localhost:5000/v1/smartPredictor/${user.clientId}/ClientOffer`)
         .then(response => response.json())
-        .then(data => setRecommendedList(data));
+        .then(data => setRecommendedList(data.recommendedList));
         fetch('http://localhost:5000/v1/smartPredictor/-435/StaffList')
         .then(response => response.json())
         .then(data => setStaffList(data));
@@ -38,19 +39,21 @@ const DetailedLeadCard = ({data}) => {
         setRepName(event.target.value);
       };
       const displayMembershipList = () => {
-        return (
-            <Paper elevation={3} className='leadPackageGold'>
-                <div className='leadBasicInfo'>
-                    <div className='leadTypeLabel'>Gold Membership</div>
-                    <div className='leadMoreInfo'>2 Times purchased</div>
-                    <div className='leadInfoRevenue'>{selectedLead.revenue}</div>
-                </div>
-                <div className='leadConversionScore leadScoreGold'>
-                    <span className='conversionScoreLabel'>Conversion score</span>
-                    <span className='conversionScoreValue'>50%</span>
-                </div>
-            </Paper>
-        )
+          return recommendedList.map((list) => {
+              return (
+                <Paper elevation={3} className='leadPackageGold'>
+                    <div className='leadBasicInfo'>
+                        <div className='leadTypeLabel'>{list.name}</div>
+                        <div className='leadMoreInfo'>{list.timesOfPurchased}</div>
+                        <div className='leadInfoRevenue'>{'Revenue $'}{list.revenue}</div>
+                    </div>
+                    <div className='leadConversionScore leadScoreGold'>
+                        <span className='conversionScoreLabel'>{'Conversion Score '}{list.conversionScore}%</span>
+                        <span className='conversionScoreValue'>{list.review}{' Review'}</span>
+                    </div>
+                </Paper>)
+          })
+        
     }
 
     const getstaffList = ()=>{
@@ -66,7 +69,7 @@ const DetailedLeadCard = ({data}) => {
                             >
                                 {staffList.map((staff)=>{
                                     return (
-                                        <MenuItem value={staff.name}>{staff.name}</MenuItem>
+                                        <MenuItem value={staff.staffId}>{staff.staffName}</MenuItem>
                                     )
                                 })}
                                 {/* <MenuItem value={'johnHarris'}>John Harris</MenuItem>
@@ -81,10 +84,10 @@ const DetailedLeadCard = ({data}) => {
             <div className='leadPushNotification'>
                 <div className='leadHeadSection'>
                     <div className='leadInfo'>
-                        <div className='leadAvatar'><img alt={selectedLead.name} src={leadAvatar} /></div>
+                        <div className='leadAvatar'><img alt={""} src={leadAvatar} /></div>
                         <div className='leadDetails'>
-                            <div className='leadName'>{selectedLead.name}</div>
-                            <div className='leadPlace'>{selectedLead.place}</div>
+                            <div className='leadName'>{selectedLead.clientName}</div>
+                            <div className='leadPlace'>{selectedLead.location}</div>
                         </div>
                     </div>
                     <div className='leadScoreSection'>
@@ -115,7 +118,7 @@ const DetailedLeadCard = ({data}) => {
                         }
                     </div>
                     <div className='leadPackage'>
-                        <Paper elevation={3} className='leadPackageFlex'>
+                        {/* <Paper elevation={3} className='leadPackageFlex'>
                             <div className='leadBasicInfo'>
                                 <div className='leadTypeLabel'>Gold Membership</div>
                                 <div className='leadMoreInfo'>2 Times purchased</div>
@@ -125,7 +128,7 @@ const DetailedLeadCard = ({data}) => {
                                 <span className='conversionScoreLabel'>Conversion score</span>
                                 <span className='conversionScoreValue'>50%</span>
                             </div>
-                        </Paper>
+                        </Paper> */}
                     </div>
                 </div>
                 <div className='leadSettingsSection'>
@@ -157,13 +160,13 @@ const DetailedLeadCard = ({data}) => {
                         <img src={leadAvatar} alt="" />
                     </div>
                     <div className='leadInfo commonLeadInfoRowGrid'>
-                        <span className='leadName'>{data.name}</span>
-                        <span className='leadLocation'>{data.place}</span>
+                        <span className='leadName'>{data.clientName}</span>
+                        <span className='leadLocation'>{data.location}</span>
                     </div>
                 </div>
                 <div className='leadMembershipInfo commonLeadInfoRowGrid'>
                     <span className='label'>Membership</span>
-                    <span className='leadValue'>{data.membership}</span>
+                    <span className='leadValue'>{data.memberShip?"Yes":"NO"}</span>
                 </div>
                 <div className='leadActiveInfo commonLeadInfoRowGrid'>
                     <span className='label'>Active On</span>

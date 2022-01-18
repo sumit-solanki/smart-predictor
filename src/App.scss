@@ -465,10 +465,11 @@
     padding: 10px 0;
   }
   .leadPackageSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-    padding: 10px 0;
+    .leadPackage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 10px ;
+  }
 
     .leadPackageGold,
     .leadPackageFlex {

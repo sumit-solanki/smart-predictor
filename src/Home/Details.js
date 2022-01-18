@@ -9,7 +9,7 @@ import BusinessImpactCards from './businessImpactCards';
 
     
     const displayLeads = () => {
-       return userData.map(data=> {
+       return userData.clientList.map(data=> {
             return (
             <DetailedLeadCard data={data} key={data.id}/>
             );
@@ -18,7 +18,7 @@ import BusinessImpactCards from './businessImpactCards';
 
     const displayBICards = () => {
         return (
-            <BusinessImpactCards />
+            <BusinessImpactCards data ={userData.businessImpact} />
         )
     }
 

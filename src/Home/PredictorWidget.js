@@ -24,14 +24,14 @@ const PredictorWidget = ({ setUserData }) => {
   let navigate = useNavigate();
 
   const naviateToDetail = (userType) => {
-    // fetch(`https://pokeapi.co/api/v2/pokemon/1/${selectedDay}/{userType}`)
+    fetch(`http://localhost:5000/v1/smartPredictor/1/LeadOpportunity?dayCount=${selectedDay}&type=${userType}`)
 
-    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+    //fetch(`https://pokeapi.co/api/v2/pokemon/1`)
       .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
-        setUserData(leadOpportunityUserData);
-        // setUserData(response);
+        //setUserData(leadOpporturenityUserData);
+        setUserData(response);
 
         setDialogVisiblity(false);
         navigate("detail");
@@ -92,12 +92,12 @@ const PredictorWidget = ({ setUserData }) => {
     setSelectedDay(selectedDay);
   };
   const handleClick = () => {
-    // fetch(`https://pokeapi.co/api/v2/pokemon/1/${selectedDay}`)
-    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+    fetch(`http://localhost:5000/v1/smartPredictor/1/LeadOpportunityData?dayCount=${selectedDay}`)
+    //fetch(`https://pokeapi.co/api/v2/pokemon/1`)
       .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
-        setdialogData(widgetData);
+        setdialogData(response);
         setDialogVisiblity(true);
       })
 

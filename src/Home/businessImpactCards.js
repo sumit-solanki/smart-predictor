@@ -5,18 +5,19 @@ import newLeadsAvatar from './newLeads.png';
 import buyingScoreAvatar from './buyingScore.png';
 import StaffUtilization from './StaffUtilization';
 const staffData =[
-    { name: "Group A", value: 70, color:"#0088FE" },
+    { name: "Existing Utilization", value: 50, color:"#0088FE" },
   
-    { name: "Group D", value: 20, color:"#10B981" },
-    { name: "", value: 10 , color:"#E5E5E5" },
+    { name: "Potential Utilization", value: 20, color:"#10B981" },
+    { name: "", value: 30 , color:"#E5E5E5" },
 
   ];
-const BusinessImpactCards = () => {
+const BusinessImpactCards = ({data}) => {
+    console.log(data);
     return (
         <div className='biCardsWrapper'>
             <Paper elevation={3} className='potentialRevenueCard biMainCardsCommon'>
                 <div className='potentialRevenueInfo'>
-                    <span className='biValue'>$2000</span>
+                    <span className='biValue'>{data.potentialRevenue}</span>
                     <span className='biLabel'>Potential Revenue</span>
                 </div>
                 <div className='potentialRevenueGraph'>
@@ -26,7 +27,7 @@ const BusinessImpactCards = () => {
             <div className='leadsPlusScoreCards biMainCardsCommon col-gap-20'>
                 <Paper elevation={3} className='newLeadsCard padding-20'>
                     <div className='newLeadsInfo'>
-                        <span className='biValue'>$20</span>
+                        <span className='biValue'>{data.newLeads}</span>
                         <span className='biLabel'>New Leads</span>
                     </div>
                     <div className='newLeadsAvatar'>
@@ -35,7 +36,7 @@ const BusinessImpactCards = () => {
                 </Paper>
                 <Paper elevation={3} className='buyingScoreCard padding-20'>
                     <div className='newLeadsInfo'>
-                        <span className='biValue'>$20</span>
+                        <span className='biValue'>{data.buyingScore}</span>
                         <span className='biLabel'>Buying score</span>
                     </div>
                     <div className='newLeadsAvatar'>
@@ -45,7 +46,7 @@ const BusinessImpactCards = () => {
             </div>
             <Paper elevation={3} className='staffUtilizationCard biMainCardsCommon padding-20'>
                 <div className='potentialRevenueInfo'>
-                    <span className='biValue'>70%</span>
+                    <span className='biValue'>{data.staffUtilization}</span>
                     <span className='biLabel'>Staff Utilization</span>
                 </div>
                 <div className='potentialRevenueGraph'>
