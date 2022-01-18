@@ -15,8 +15,6 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
-  // height: 60,
-  // lineHeight: '60px',
 }));
 
 const PredictorWidget = ({ setUserData }) => {
@@ -28,11 +26,9 @@ const PredictorWidget = ({ setUserData }) => {
   const naviateToDetail = (userType) => {
     fetch(`http://localhost:5000/v1/smartPredictor/1/LeadOpportunity?dayCount=${selectedDay}&type=${userType}`)
 
-    //fetch(`https://pokeapi.co/api/v2/pokemon/1`)
       .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
-        //setUserData(leadOpporturenityUserData);
         setUserData(response);
 
         setDialogVisiblity(false);
@@ -95,7 +91,6 @@ const PredictorWidget = ({ setUserData }) => {
   };
   const handleClick = () => {
     fetch(`http://localhost:5000/v1/smartPredictor/1/LeadOpportunityData?dayCount=${selectedDay}`)
-    //fetch(`https://pokeapi.co/api/v2/pokemon/1`)
       .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
@@ -116,7 +111,6 @@ const PredictorWidget = ({ setUserData }) => {
         </div>
         <div className="card-title">choose your opportunity</div>
         <div className="card-dsc">
-          {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
         </div>
         <div className="button-row">
           <button

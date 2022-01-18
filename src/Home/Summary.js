@@ -12,7 +12,6 @@ import newUserIcon from "./img/newUserIcon.svg";
 import potentialRevanue from "./img/potentialRevanue.svg";
 import revanue from "./img/revanue.svg";
 import classNames from "classnames";
-import { engagementData } from "./summary-data";
 import { isEmpty } from "lodash";
 import Loader from "./../Loader";
 const Item = styled(Paper)(({ theme }) => ({
@@ -20,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   padding: "20px",
   textAlign: "left",
-  position:'relative'
+  position: "relative",
 }));
 const staffData = [
   { name: "Group A", value: 70, color: "#0088FE" },
@@ -51,12 +50,12 @@ const renderDataKeyArray = [
   "totalLossRevenue",
 ];
 
-const Summary = ({setUserData}) => {
+const Summary = ({ setUserData }) => {
   const [apiData, setApiData] = useState({});
 
   useEffect(() => {
     fetch(`http://localhost:5000/v1/smartPredictor/-435/EngagementData`)
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
         setApiData(response);
@@ -88,9 +87,7 @@ const Summary = ({setUserData}) => {
           </div>
           <div className="data-detail">{titleNameMap[data]}</div>
           {data === "totalLossRevenue" && (
-            <div className="data-detail-desc">
-              {/* How did we calculate the revenue lose? */}
-            </div>
+            <div className="data-detail-desc"></div>
           )}
         </div>
         <div className="card-right">
@@ -110,9 +107,7 @@ const Summary = ({setUserData}) => {
         <div className="engagement-wrapper">
           <div className="heading">
             <div className="head-title">Engagement</div>
-            <div className="head-detail">
-              {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
-            </div>
+            <div className="head-detail"></div>
           </div>
           <div className="main-detail">
             {renderDataKeyArray.map((item) => (
@@ -129,16 +124,21 @@ const Summary = ({setUserData}) => {
               <Item elevation={2}>
                 <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
                 <div className="custom-legand-wrapper-satff">
-                  <div className="legad-desc">Sales and Marketing <span className="highlight-desc">{`(${apiData['staffAndMarketingPercentage']}%)`}</span></div>
+                  <div className="legad-desc">
+                    Sales and Marketing{" "}
+                    <span className="highlight-desc">{`(${apiData["staffAndMarketingPercentage"]}%)`}</span>
+                  </div>
                 </div>
               </Item>
             </div>
             <div className="">
               <Item elevation={2}>
                 <StaffUtilization graphData={staffData} />
-                <div className="custom-legand-wrapper" >
-                  <div className="legand-head">{`${apiData['staffUtilization']}%`}</div>
-                  <div className="legad-desc" style={{"font-weight":"700"}}>Staff Utilization </div>
+                <div className="custom-legand-wrapper">
+                  <div className="legand-head">{`${apiData["staffUtilization"]}%`}</div>
+                  <div className="legad-desc" style={{ "font-weight": "700" }}>
+                    Staff Utilization{" "}
+                  </div>
                 </div>
               </Item>
             </div>
@@ -148,9 +148,7 @@ const Summary = ({setUserData}) => {
       <div className="right">
         <div className="heading">
           <div className="head-title">Lead opportunity</div>
-          <div className="head-detail">
-            {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
-          </div>
+          <div className="head-detail"></div>
         </div>
         <div className="lead-detail">
           <div className="predictor-wrapper">
