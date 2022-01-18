@@ -79,7 +79,7 @@ const Summary = ({setUserData}) => {
             })}
           >
             {data === "totalLossRevenue" && (
-              <span className="total-loss-span">$</span>
+              <span className="total-loss-span">-$</span>
             )}
             {apiData[data]}
             {data === "leadConversionScore" && (
@@ -89,7 +89,7 @@ const Summary = ({setUserData}) => {
           <div className="data-detail">{titleNameMap[data]}</div>
           {data === "totalLossRevenue" && (
             <div className="data-detail-desc">
-              How did we calculate the revenue lose?
+              {/* How did we calculate the revenue lose? */}
             </div>
           )}
         </div>
@@ -111,7 +111,7 @@ const Summary = ({setUserData}) => {
           <div className="heading">
             <div className="head-title">Engagement</div>
             <div className="head-detail">
-              Lorem Ipsum eaecenas maximus urna congue urna congue.
+              {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
             </div>
           </div>
           <div className="main-detail">
@@ -129,16 +129,16 @@ const Summary = ({setUserData}) => {
               <Item elevation={2}>
                 <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
                 <div className="custom-legand-wrapper-satff">
-                  <div className="legad-desc">Sales and marketing <span className="highlight-desc">{`(${apiData['staffAndMarketingPercentage']}%)`}</span></div>
+                  <div className="legad-desc">Sales and Marketing <span className="highlight-desc">{`(${apiData['staffAndMarketingPercentage']}%)`}</span></div>
                 </div>
               </Item>
             </div>
             <div className="">
               <Item elevation={2}>
                 <StaffUtilization graphData={staffData} />
-                <div className="custom-legand-wrapper">
+                <div className="custom-legand-wrapper" >
                   <div className="legand-head">{`${apiData['staffUtilization']}%`}</div>
-                  <div className="legad-desc">staff utilization </div>
+                  <div className="legad-desc" style={{"font-weight":"700"}}>Staff Utilization </div>
                 </div>
               </Item>
             </div>
@@ -149,7 +149,7 @@ const Summary = ({setUserData}) => {
         <div className="heading">
           <div className="head-title">Lead opportunity</div>
           <div className="head-detail">
-            Lorem Ipsum eaecenas maximus urna congue urna congue.
+            {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
           </div>
         </div>
         <div className="lead-detail">

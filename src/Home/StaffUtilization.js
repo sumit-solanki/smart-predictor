@@ -19,7 +19,7 @@ export default function StaffUtilization({graphData}) {
           startAngle={180}
           endAngle={0}
           innerRadius={60}
-          outerRadius={80}
+          outerRadius={90}
           fill="#8884d8"
           dataKey="value"
         >

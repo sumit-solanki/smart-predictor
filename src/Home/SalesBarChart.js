@@ -3,7 +3,7 @@ import { BarChart, Bar, ResponsiveContainer, Tooltip } from "recharts";
 
 export default function SalesBarChart({graphData}) {
   return (
-    <ResponsiveContainer width="100%" height={200}>
+    <ResponsiveContainer width="100%" height={165}>
       <BarChart
 
         data={graphData}
@@ -20,6 +20,7 @@ export default function SalesBarChart({graphData}) {
           stroke-linecap="round"
           fill="#00B0FF"
           background={{ fill: "#F8FAFC" }}
+          barSize={15}
         />
       </BarChart>
     </ResponsiveContainer>

@@ -34,7 +34,7 @@ import BusinessImpactCards from './businessImpactCards';
                 <div className='left'>
                     <div className='existingUserHeadSection'>
                         <h2>{userData.clientList.length} - {userData.type}</h2>
-                        <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span>
+                        {/* <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span> */}
                     </div>
                     <div className='leadsList'>
                         {displayLeads()}
@@ -43,7 +43,7 @@ import BusinessImpactCards from './businessImpactCards';
                 <div className='right'>
                     <div className='biHeadSection'>
                         <h2>Business impact</h2>
-                        <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span>
+                        {/* <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span> */}
                     </div>
                     <div className='biCardsList'>
                         {displayBICards()}

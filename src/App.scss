@@ -1,7 +1,7 @@
 /* App.js & common */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 .App {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100%;
 }
@@ -38,7 +38,7 @@
       }
       .studioLocation {
         color: #475569;
-        font-size: 14px;
+        font-size: 18px;
         text-align: right;
       }
     }
@@ -56,11 +56,11 @@
     border: 1px solid #e2e8f0;
     box-sizing: border-box;
     border-radius: 18px;
-    width: 77px;
+    width: 90px;
     height: 36px;
     display: flex;
     flex-direction: row;
-    font-size: 14px;
+    font-size: 18px;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -83,18 +83,18 @@
 .summary-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 60px;
   .heading {
     margin-bottom: 30px;
     color: #475569;
     .head-title {
       font-style: normal;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 32px;
     }
     .head-detail {
       font-weight: normal;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   .single-card {
@@ -114,14 +114,14 @@
       }
     }
     .data-detail {
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 700;
     }
     .data-detail-desc {
       margin-top: 10px;
       color: #94a3b8;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   .left {
@@ -171,12 +171,12 @@
           color: #475569;
         }
         .card-dsc {
-          font-size: 14px;
+          font-size: 18px;
           margin-bottom: 25px;
           color: #475569;
         }
         .button-row {
-          margin-bottom: 25px;
+          margin-bottom: 35px;
           .widget-btn {
             background: #ffffff;
             border: 1px solid #94a3b8;
@@ -184,7 +184,7 @@
             border-radius: 100px;
             padding: 5px 15px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 18px;
             color: #475569;
             margin-right: 10px;
             cursor: pointer;
@@ -200,7 +200,7 @@
             background: #2962ff;
             border-radius: 3px;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 18px;
             color: white;
             padding: 9px 15px;
             border: 1px solid;
@@ -222,6 +222,7 @@
 .details-main {
   display: grid;
   grid-template-columns: 60% 40%;
+  grid-column-gap: 60px;
   .left {
     .existingUserHeadSection {
     }
@@ -246,11 +247,11 @@
         }
         .label {
           color: #475569;
-          font-size: 14px;
+          font-size: 18px;
         }
         .leadValue {
           font-weight: 600;
-          font-size: 14px;
+          font-size: 18px;
         }
       }
       .commonLeadInfoRowGrid {
@@ -259,7 +260,7 @@
       }
       .commonLeadInfoColumnGrid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 60%;
         
         
       }
@@ -271,12 +272,12 @@
         padding: 10px;
         .label{
           color: #475569;
-          font-size: 14px;
+          font-size: 18px;
           font-weight: 700;
         }
         .leadValue{
           color: #10B981;
-          font-size: 14px;
+          font-size: 18px;
           font-weight: 700;
         }
       }
@@ -339,7 +340,7 @@
       color: #475569;
     }
     span {
-      font-size: 14px;
+      font-size: 18px;
       color: #475569;
     }
   }
@@ -407,13 +408,13 @@
     .head-title {
       color: #475569;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 32px;
       margin-bottom: 8px;
       text-transform: capitalize;
     }
     .head-desc {
       color: #94a3b8;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   .dialog-content {
@@ -433,18 +434,18 @@
           .card-title {
             color: #475569;
             font-weight: 800;
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 5px;
           }
           .title-desc {
             color: #94a3b8;
-            font-weight: 500;
-            font-size: 14px;
+            font-weight: 300;
+            font-size: 18px;
           }
         }
         .card-bottom {
           font-weight: 800;
-          font-size: 14px;
+          font-size: 18px;
           padding: 10px;
           .highlight-large {
             font-weight: 800;
@@ -530,7 +531,7 @@
       color: #3b82f6;
       display: flex;
       flex-flow: column;
-      font-size: 14px;
+      font-size: 18px;
     }
     .leadScoreFlex {
       background: #f8fafc;
@@ -538,7 +539,7 @@
       color: #10b981;
       display: flex;
       flex-flow: column;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   .leadSettingsSection {
@@ -550,7 +551,7 @@
       color: #475569;
     }
     .settingsSubLabel {
-      font-size: 14px;
+      font-size: 18px;
       color: #475569;
       padding: 6px 0;
     }
@@ -558,7 +559,7 @@
   .leadNoteSection {
     padding: 10px 0;
     width: 510px;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 24px;
 
     span {
@@ -584,7 +585,7 @@
     color: #475569;
   }
   .legad-desc {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 .custom-legand-wrapper-satff {
@@ -594,7 +595,7 @@
 
   .legad-desc {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
     color: #475569;
   }
   .highlight-desc {

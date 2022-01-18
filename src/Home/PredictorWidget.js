@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import { widgetData } from "./data/widget-data";
 import { leadOpportunityUserData } from "./details-lead-data";
+import Button from '@mui/material/Button';
+
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
@@ -114,7 +116,7 @@ const PredictorWidget = ({ setUserData }) => {
         </div>
         <div className="card-title">choose your opportunity</div>
         <div className="card-dsc">
-          Lorem Ipsum eaecenas maximus urna congue urna congue.
+          {/* Lorem Ipsum eaecenas maximus urna congue urna congue. */}
         </div>
         <div className="button-row">
           <button
@@ -143,9 +145,9 @@ const PredictorWidget = ({ setUserData }) => {
           </button>
         </div>
         <div className="main-btn-row">
-          <button className="predictor-btn" onClick={handleClick}>
+          <Button className="predictor-btn" variant="outlined" size="large" onClick={handleClick}>
             Run Predictor <img src={arrow} alt="" />{" "}
-          </button>
+          </Button>
         </div>
       </div>
       <CustomizedDialogs

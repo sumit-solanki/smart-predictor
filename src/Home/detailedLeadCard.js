@@ -72,9 +72,6 @@ const DetailedLeadCard = ({data}) => {
                                         <MenuItem value={staff.staffId}>{staff.staffName}</MenuItem>
                                     )
                                 })}
-                                {/* <MenuItem value={'johnHarris'}>John Harris</MenuItem>
-                                <MenuItem value={'chrisWoakes'}>Chris Woakes</MenuItem>
-                                <MenuItem value={'benDavis'}>Ben Davis</MenuItem> */}
                             </Select>
                         </FormControl>
         )};
@@ -85,50 +82,22 @@ const DetailedLeadCard = ({data}) => {
                 <div className='leadHeadSection'>
                     <div className='leadInfo'>
                         <div className='leadAvatar'><img alt={""} src={leadAvatar} /></div>
-                        <div className='leadDetails'>
-                            <div className='leadName'>{selectedLead.clientName}</div>
+                        <div className='leadDetails' >
+                            <div className='leadName' style={{"font-size":"24px","font-weight":"700"}}>{selectedLead.clientName}</div>
                             <div className='leadPlace'>{selectedLead.location}</div>
                         </div>
                     </div>
-                    {/* <div className='leadScoreSection'>
-                        <div className='leadScore'>
-                            <div className='leadScoreLabel'>Lead Score</div>
-                            <div className='leadScore'>{selectedLead.leadScore}</div>
-                        </div>                        
-                    </div> */}
                 </div>
                 <div className='leadLabelSection'>
                     Recommonded Offer
                 </div>
                 <div className='leadPackageSection'>
                     <div className='leadPackage'>
-                        {/* <Paper elevation={3} className='leadPackageGold'>
-                            <div className='leadBasicInfo'>
-                                <div className='leadTypeLabel'>Gold Membership</div>
-                                <div className='leadMoreInfo'>2 Times purchased</div>
-                                <div className='leadInfoRevenue'>{selectedLead.revenue}</div>
-                            </div>
-                            <div className='leadConversionScore leadScoreGold'>
-                                <span className='conversionScoreLabel'>Conversion score</span>
-                                <span className='conversionScoreValue'>50%</span>
-                            </div>
-                        </Paper> */}
                         {
                             displayMembershipList()
                         }
                     </div>
                     <div className='leadPackage'>
-                        {/* <Paper elevation={3} className='leadPackageFlex'>
-                            <div className='leadBasicInfo'>
-                                <div className='leadTypeLabel'>Gold Membership</div>
-                                <div className='leadMoreInfo'>2 Times purchased</div>
-                                <div className='leadInfoRevenue'>{selectedLead.revenue}</div>
-                            </div>
-                            <div className='leadConversionScore leadScoreFlex'>
-                                <span className='conversionScoreLabel'>Conversion score</span>
-                                <span className='conversionScoreValue'>50%</span>
-                            </div>
-                        </Paper> */}
                     </div>
                 </div>
                 <div className='leadSettingsSection'>
