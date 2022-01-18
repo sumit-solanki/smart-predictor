@@ -55,11 +55,11 @@ const Summary = () => {
   const [apiData, setApiData] = useState({});
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/1")
-      //   .then(response => response.data)
+    fetch(`http://localhost:5000/v1/smartPredictor/-435/EngagementData`)
+      .then(response => response.json())
       .then((response) => {
         console.log("res-->>>", response);
-        setApiData(engagementData);
+        setApiData(response);
       })
 
       .catch((err) => {
@@ -160,7 +160,7 @@ const Summary = () => {
             <Item elevation={2}>
               <div className="single-card">
                 <div className="card-left">
-                  <div className="data-title">{`~${apiData["potentialRevenue"]}`}</div>
+                  <div className="data-title">{`~$${apiData["potentialRevenue"]}`}</div>
                   <div className="data-detail">Potential revenue</div>
                 </div>
                 <div className="card-right">
