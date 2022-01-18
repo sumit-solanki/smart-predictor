@@ -33,7 +33,7 @@ import BusinessImpactCards from './businessImpactCards';
             <div className='details-main'>
                 <div className='left'>
                     <div className='existingUserHeadSection'>
-                        <h2>50 - Existing User</h2>
+                        <h2>{userData.clientList.length} - {userData.type}</h2>
                         <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span>
                     </div>
                     <div className='leadsList'>

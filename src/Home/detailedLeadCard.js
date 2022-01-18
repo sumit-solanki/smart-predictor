@@ -90,12 +90,12 @@ const DetailedLeadCard = ({data}) => {
                             <div className='leadPlace'>{selectedLead.location}</div>
                         </div>
                     </div>
-                    <div className='leadScoreSection'>
+                    {/* <div className='leadScoreSection'>
                         <div className='leadScore'>
                             <div className='leadScoreLabel'>Lead Score</div>
                             <div className='leadScore'>{selectedLead.leadScore}</div>
                         </div>                        
-                    </div>
+                    </div> */}
                 </div>
                 <div className='leadLabelSection'>
                     Recommonded Offer

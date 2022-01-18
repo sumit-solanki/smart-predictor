@@ -17,7 +17,7 @@ const BusinessImpactCards = ({data}) => {
         <div className='biCardsWrapper'>
             <Paper elevation={3} className='potentialRevenueCard biMainCardsCommon'>
                 <div className='potentialRevenueInfo'>
-                    <span className='biValue'>{data.potentialRevenue}</span>
+                    <span className='biValue'>~ ${data.potentialRevenue}</span>
                     <span className='biLabel'>Potential Revenue</span>
                 </div>
                 <div className='potentialRevenueGraph'>
@@ -27,7 +27,7 @@ const BusinessImpactCards = ({data}) => {
             <div className='leadsPlusScoreCards biMainCardsCommon col-gap-20'>
                 <Paper elevation={3} className='newLeadsCard padding-20'>
                     <div className='newLeadsInfo'>
-                        <span className='biValue'>{data.newLeads}</span>
+                        <span className='biValue'>~{data.newLeads}</span>
                         <span className='biLabel'>New Leads</span>
                     </div>
                     <div className='newLeadsAvatar'>
@@ -36,7 +36,7 @@ const BusinessImpactCards = ({data}) => {
                 </Paper>
                 <Paper elevation={3} className='buyingScoreCard padding-20'>
                     <div className='newLeadsInfo'>
-                        <span className='biValue'>{data.buyingScore}</span>
+                        <span className='biValue'>~{data.buyingScore}%</span>
                         <span className='biLabel'>Buying score</span>
                     </div>
                     <div className='newLeadsAvatar'>
@@ -46,7 +46,7 @@ const BusinessImpactCards = ({data}) => {
             </div>
             <Paper elevation={3} className='staffUtilizationCard biMainCardsCommon padding-20'>
                 <div className='potentialRevenueInfo'>
-                    <span className='biValue'>{data.staffUtilization}</span>
+                    <span className='biValue'>~{data.staffUtilization}%</span>
                     <span className='biLabel'>Staff Utilization</span>
                 </div>
                 <div className='potentialRevenueGraph'>
