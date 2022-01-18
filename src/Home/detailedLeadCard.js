@@ -41,17 +41,30 @@ const DetailedLeadCard = ({data}) => {
       const displayMembershipList = () => {
           return recommendedList.map((list) => {
               return (
-                <Paper elevation={3} className='leadPackageGold'>
-                    <div className='leadBasicInfo'>
-                        <div className='leadTypeLabel'>{list.name}</div>
-                        <div className='leadMoreInfo'>{list.timesOfPurchased}</div>
-                        <div className='leadInfoRevenue'>{'Revenue $'}{list.revenue}</div>
-                    </div>
-                    <div className='leadConversionScore leadScoreGold'>
-                        <span className='conversionScoreValue'>{list.review}{' Review'}</span>
-                        <span className='conversionScoreLabel'>{'Conversion Score '}{list.conversionScore}%</span>
-                    </div>
-                </Paper>)
+                <Paper elevation={3} className="leadPackageGold">
+                <div className="leadBasicInfo">
+                  <div className="leadTypeLabel">{list.name}</div>
+                  <div className="leadMoreInfo">{list.timesOfPurchased}</div>
+                  <span className="conversionScoreValue" style={{ color: "#94A3B8" }}>
+                    {list.review}
+                    {" Review"}
+                  </span>
+                  <div className="leadInfoRevenue">
+                    {"Revenue $"}
+                    {list.revenue}
+                  </div>
+                </div>
+                <div
+                  className={
+                    list.conversionScore >= 70
+                      ? "leadConversionScore leadScoreGold colorgreen"
+                      : "leadConversionScore leadScoreGold"
+                  }
+                >
+                  <span className="conversionScoreLabel">{"Conversion Score "}</span>
+                  <span style={{ "font-size": "18px" }}>{list.conversionScore}%</span>
+                </div>
+              </Paper>)
           })
         
     }
@@ -88,7 +101,7 @@ const DetailedLeadCard = ({data}) => {
                         </div>
                     </div>
                 </div>
-                <div className='leadLabelSection'>
+                <div className='leadLabelSection' style ={{"font-size":"24px", "font-weight":"700"}}>
                     Recommonded Offer
                 </div>
                 <div className='leadPackageSection'>

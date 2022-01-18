@@ -221,8 +221,8 @@
 /* Detail */
 .details-main {
   display: grid;
-  grid-template-columns: 60% 40%;
-  grid-column-gap: 60px;
+  grid-template-columns: 57% 37%;
+  grid-column-gap: 6%;
   .left {
     .existingUserHeadSection {
     }
@@ -510,9 +510,9 @@
       padding: 10px 10px 0 10px;
 
       .leadTypeLabel {
-        font-size: 18px;
+        font-size: 20px;
         color: #475569;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 22px;
       }
       .leadMoreInfo {
@@ -527,11 +527,15 @@
     }
     .leadScoreGold {
       background: #f8fafc;
-      padding: 10px;
+      padding: 10px 15px;
       color: #3b82f6;
       display: flex;
       flex-flow: column;
-      font-size: 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .colorgreen {
+      color: #10b981;
     }
     .leadScoreFlex {
       background: #f8fafc;
@@ -546,8 +550,8 @@
     padding: 10px 0;
 
     .settingsLabel {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 700;
       color: #475569;
     }
     .settingsSubLabel {

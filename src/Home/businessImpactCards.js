@@ -24,7 +24,7 @@ const BusinessImpactCards = ({data}) => {
                    <RevenueLineChart />
                 </div>
             </Paper>
-            <div className='leadsPlusScoreCards biMainCardsCommon col-gap-20' style ={{"padding": "20px 0px"}}>
+            <div className='leadsPlusScoreCards biMainCardsCommon col-gap-20' style ={{"padding": "0px 0px"}}>
                 <Paper elevation={3} className='newLeadsCard padding-20' style ={{"padding": "50px 25px"}}>
                     <div className='newLeadsInfo'>
                         <span className='biValue'>~{data.newLeads}</span>
@@ -51,7 +51,7 @@ const BusinessImpactCards = ({data}) => {
                 </div>
                 <div className='potentialRevenueGraph' style={{"position":"relative"}}>
                 <StaffUtilization graphData={staffData} />
-                <div className="custom-legand-wrapper" style={{"right": "30%", "width":"unset"}}>
+                <div className="custom-legand-wrapper" style={{"right": "20%", "width":"unset"}}>
                   <div className="legand-head" style={{"color":"#10B981"}}>{`20%`}</div>
                   <div className="legad-desc">Increase in utilization </div>
                 </div>

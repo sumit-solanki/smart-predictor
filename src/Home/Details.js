@@ -42,7 +42,7 @@ import BusinessImpactCards from './businessImpactCards';
                 </div>
                 <div className='right'>
                     <div className='biHeadSection'>
-                        <h2>Business impact</h2>
+                        <h2>Business Impact</h2>
                         {/* <span>Lorem Ipsum eaecenas maximus urna congue urna congue.</span> */}
                     </div>
                     <div className='biCardsList'>
