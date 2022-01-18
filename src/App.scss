@@ -223,6 +223,12 @@
   .left {
     .existingUserHeadSection {
     }
+    .leadScoreInfo {
+      .leadValue {
+        color: #10b981;
+      }
+    }
+
     .leadsList {
       .leadDataBox {
         margin-bottom: 2%;
@@ -252,6 +258,10 @@
       .commonLeadInfoColumnGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
+      }
+      .leadScoreInfo {
+        background: hsl(152, 81%, 96%);
+        padding: 0 10px;
       }
     }
   }
@@ -396,6 +406,7 @@
             color: #475569;
             font-weight: 800;
             font-size: 18px;
+            margin-bottom: 5px;
           }
           .title-desc {
             color: #94a3b8;
@@ -474,6 +485,15 @@
         font-weight: 600;
         line-height: 22px;
       }
+      .leadMoreInfo {
+        color: #94A3B8;
+        font-weight: 200;
+    }
+    .leadInfoRevenue {
+        color: #94A3B8;
+        font-weight: 600;
+    }
+
     }
     .leadScoreGold {
       background: #f8fafc;
@@ -548,7 +568,7 @@
     font-size: 14px;
     color: #475569;
   }
-  .highlight-desc{
-    color: #00B0FF;
+  .highlight-desc {
+    color: #00b0ff;
   }
 }

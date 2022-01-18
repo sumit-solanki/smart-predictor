@@ -51,7 +51,7 @@ const renderDataKeyArray = [
   "totalLossRevenue",
 ];
 
-const Summary = () => {
+const Summary = ({setUserData}) => {
   const [apiData, setApiData] = useState({});
 
   useEffect(() => {
@@ -129,7 +129,7 @@ const Summary = () => {
               <Item elevation={2}>
                 <SalesBarChart graphData={apiData["staffAndMarketingData"]} />
                 <div className="custom-legand-wrapper-satff">
-                  <div className="legad-desc">Sales and marketing <span className="highlight-desc">{`(${apiData['StaffAndMarketingPercentage']}%)`}</span></div>
+                  <div className="legad-desc">Sales and marketing <span className="highlight-desc">{`(${apiData['staffAndMarketingPercentage']}%)`}</span></div>
                 </div>
               </Item>
             </div>
@@ -154,7 +154,7 @@ const Summary = () => {
         </div>
         <div className="lead-detail">
           <div className="predictor-wrapper">
-            <PredictorWidget />
+            <PredictorWidget setUserData={setUserData} />
           </div>
           <div className="large">
             <Item elevation={2}>

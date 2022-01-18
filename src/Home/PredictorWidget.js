@@ -6,7 +6,8 @@ import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
-import {widgetData} from './datawidget-data';
+import { widgetData } from "./data/widget-data";
+import { leadOpportunityUserData } from "./details-lead-data";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   color: theme.palette.text.secondary,
@@ -16,13 +17,29 @@ const Item = styled(Paper)(({ theme }) => ({
   // lineHeight: '60px',
 }));
 
-const PredictorWidget = () => {
+const PredictorWidget = ({ setUserData }) => {
   const [openDialog, setDialogVisiblity] = React.useState(false);
-  const [selectedDay,setSelectedDay] = React.useState("today")
+  const [selectedDay, setSelectedDay] = React.useState("0");
+  const [dialogdata, setdialogData] = React.useState([]);
   let navigate = useNavigate();
 
-  const naviateToDetail = () => {
-    navigate("detail");
+  const naviateToDetail = (userType) => {
+    // fetch(`https://pokeapi.co/api/v2/pokemon/1/${selectedDay}/{userType}`)
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log("res-->>>", response);
+        setUserData(leadOpportunityUserData);
+        // setUserData(response);
+
+        setDialogVisiblity(false);
+        navigate("detail");
+      })
+
+      .catch((err) => {
+        console.log("Fetch Error :-S", err);
+      });
   };
   const renderDialogContent = () => {
     return (
@@ -34,97 +51,99 @@ const PredictorWidget = () => {
           </div>
         </div>
         <div className="dialog-content">
-          <div className="single-dialog-card" onClick={naviateToDetail}>
-            <Item elevation={2}>
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="card-title">
-                    <div>20</div>
-                    <div>New User</div>
+          {dialogdata.map((item) => {
+            return (
+              <div className="single-dialog-card" onClick={()=>naviateToDetail(item.type)}>
+                <Item elevation={2}>
+                  <div className="card-inner">
+                    <div className="card-top">
+                      <div className="card-title">
+                        <div>{item.count}</div>
+                        <div>{item.type}</div>
+                      </div>
+                      <div className="title-desc">
+                        Potential revenue: ~${item.potentialRevenue}
+                      </div>
+                    </div>
+                    <div
+                      className={classNames("card-bottom", {
+                        yellow: item.type === "Existing User",
+                        green: item.type === "New User",
+                        red: item.type === "Inactive User",
+                      })}
+                    >
+                      <div className="highlight-small">
+                        Lead conversion score
+                      </div>
+                      <div className="highlight-large">
+                        {item.leadConversionScore}%
+                      </div>
+                    </div>
                   </div>
-                  <div className="title-desc">Potential revenue: ~$1000</div>
-                </div>
-                <div className="card-bottom green">
-                  <div className="highlight-small">Lead conversion score</div>
-                  <div className="highlight-large">70%</div>
-                </div>
+                </Item>
               </div>
-            </Item>
-          </div>
-          <div className="single-dialog-card" onClick={naviateToDetail}>
-            <Item elevation={2}>
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="card-title">
-                    <div>20</div>
-                    <div>New User</div>
-                  </div>
-                  <div className="title-desc">Potential revenue: ~$1000</div>
-                </div>
-                <div className="card-bottom yellow">
-                  <div className="highlight-small">Lead conversion score</div>
-                  <div className="highlight-large">70%</div>
-                </div>
-              </div>
-            </Item>
-          </div>
-          <div className="single-dialog-card" onClick={naviateToDetail}>
-            <Item elevation={2}>
-              <div className="card-inner">
-                <div className="card-top">
-                  <div className="card-title">
-                    <div>20</div>
-                    <div>New User</div>
-                  </div>
-                  <div className="title-desc">Potential revenue: ~$1000</div>
-                </div>
-                <div className="card-bottom red">
-                  <div className="highlight-small">Lead conversion score</div>
-                  <div className="highlight-large">70%</div>
-                </div>
-              </div>
-            </Item>
-          </div>
+            );
+          })}
         </div>
       </div>
     );
   };
-  const handleOnClickOnDays = (selectedDay) =>{
-    setSelectedDay(selectedDay)
-  }
-  const handleClick = () =>{
-    fetch("https://pokeapi.co/api/v2/pokemon/1")
-      //   .then(response => response.data)
+  const handleOnClickOnDays = (selectedDay) => {
+    setSelectedDay(selectedDay);
+  };
+  const handleClick = () => {
+    // fetch(`https://pokeapi.co/api/v2/pokemon/1/${selectedDay}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/1`)
+      .then((response) => response.json())
       .then((response) => {
         console.log("res-->>>", response);
-        setApiData(engagementData);
+        setdialogData(widgetData);
+        setDialogVisiblity(true);
       })
 
       .catch((err) => {
         console.log("Fetch Error :-S", err);
       });
-  }
+  };
   return (
     <div className="widget-wrapper">
       <div className="widget-head">Smart predictor</div>
       <div className="widget-content">
         <div className="card-img">
-          <img src={targetSvg}  alt=""/>
+          <img src={targetSvg} alt="" />
         </div>
         <div className="card-title">choose your opportunity</div>
         <div className="card-dsc">
           Lorem Ipsum eaecenas maximus urna congue urna congue.
         </div>
         <div className="button-row">
-          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "today"})} onClick={()=>handleOnClickOnDays("today")}>Today</button>
-          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "next7"})} onClick={()=>handleOnClickOnDays("next7")}>Next 7 Days</button>
-          <button className={classNames("widget-btn",{'selectedBtn':selectedDay === "next30"})} onClick={()=>handleOnClickOnDays("next30")}>Next 30 Days</button>
+          <button
+            className={classNames("widget-btn", {
+              selectedBtn: selectedDay === "0",
+            })}
+            onClick={() => handleOnClickOnDays("0")}
+          >
+            Today
+          </button>
+          <button
+            className={classNames("widget-btn", {
+              selectedBtn: selectedDay === "7",
+            })}
+            onClick={() => handleOnClickOnDays("7")}
+          >
+            Next 7 Days
+          </button>
+          <button
+            className={classNames("widget-btn", {
+              selectedBtn: selectedDay === "30",
+            })}
+            onClick={() => handleOnClickOnDays("30")}
+          >
+            Next 30 Days
+          </button>
         </div>
         <div className="main-btn-row">
-          <button
-            className="predictor-btn"
-            onClick={handleClick}
-          >
+          <button className="predictor-btn" onClick={handleClick}>
             Run Predictor <img src={arrow} alt="" />{" "}
           </button>
         </div>

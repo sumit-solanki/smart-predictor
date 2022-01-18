@@ -1,23 +1,15 @@
 import React,{useEffect,useState} from 'react';
 import { Link } from "react-router-dom";
 import DetailedLeadCard from './detailedLeadCard';
-import { leadOpportunityUserData } from './details-lead-data';
 import BusinessImpactCards from './businessImpactCards';
 
- const Details = () =>{
+ const Details = ({userData}) =>{
 
-    const [userLeadData, setUserLeadData] = useState([]); 
 
-    useEffect(()=>{
-        fetch('http://localhost:5000/v1/smartPredictor/-435/LeadOpportunity')
-        .then(response => response.json())
-        .then(data => setUserLeadData(data));
-
-    }, []);
 
     
     const displayLeads = () => {
-       return userLeadData.map(data=> {
+       return userData.map(data=> {
             return (
             <DetailedLeadCard data={data} key={data.id}/>
             );
